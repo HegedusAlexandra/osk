@@ -4,8 +4,14 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'noc':'./assets/pictures/no_cloud_1.png'
-      }
+        'flowers':'./assets/pictures/blossom.jpg'
+      },
+      fontFamily: {
+        'bebas': ['Bebas Neue', 'sans-serif'],
+        'afacad':['Afacad', 'sans-serif'],
+        'playfair':['Playfair Display', 'serif'],
+        'montserrat':['Montserrat','sans-serif'],
+      },
     },
   },
   plugins: [],

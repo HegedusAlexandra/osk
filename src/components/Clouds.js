@@ -17,7 +17,7 @@ const size = 5500;
 const width = window.innerWidth;
 export default function Clouds() {
   return (
-    <div className="w-[100%]">
+    <div className="absolute w-[100%] -z-2">
       {Object.values(images).map((val) => (
         <img
           className={
