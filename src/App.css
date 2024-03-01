@@ -5,18 +5,6 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: #afafaf;
 }
-.headline {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  text-transform: uppercase;
-  font-size: 8vh;
-  font-weight: 700;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #afafaf;
-  padding-left: 2vh;
-  padding-top: 6vh;
-}
 .headline2 {
   display: flex;
   flex-direction: row;
@@ -146,4 +134,78 @@ li {
 .bottomButton:hover{
   background-color: blue;
   color: #efefef;
+}
+
+/* clouds */
+
+.cloudLeft {
+  left: -60%;
+  -webkit-animation: LEFTtOrIGHT 240s ease infinite;
+          animation: LEFTtOrIGHT 240s ease infinite;
+}
+
+.cloudMid {
+  left: 10%;
+  -webkit-animation: MidToRIGHT 600s ease;
+          animation: MidToRIGHT 600s ease;
+}
+
+.cloudRight {
+  right: -60%;
+  -webkit-animation: rightToLeft 200s ease infinite;
+          animation: rightToLeft 200s ease infinite;
+}
+
+@-webkit-keyframes rightToLeft {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes rightToLeft {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes MidToRIGHT {
+  from {
+    left: 10%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes MidToRIGHT {
+  from {
+    left: 10%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes LEFTtOrIGHT {
+  from {
+    left: -60%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes LEFTtOrIGHT {
+  from {
+    left: -60%;
+  }
+  to {
+    left: 100%;
+  }
 }

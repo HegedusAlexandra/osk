@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export default class Menu extends Component {
   render() {
     return (
-        <div className=''>
+        <div className='fixed z-10 w-[100%] p-2'>
             <NavLink
             className={'link'}
             to="/"
@@ -29,7 +29,7 @@ export default class Menu extends Component {
                 };
             }}
             >
-            Productlist
+            Products
             </NavLink>
             <NavLink
             className={'link'}
@@ -42,7 +42,7 @@ export default class Menu extends Component {
                 };
             }}
             >
-            Sum
+            CART
             </NavLink>
       </div>
     )

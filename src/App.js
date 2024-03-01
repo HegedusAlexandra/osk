@@ -1,16 +1,14 @@
 import "./App.css";
-import ProductListContainer from "./components/ProductListContainer";
 import Menu from "./components/Menu";
+import Clouds from "./components/Clouds";
 
 function App() {
   return (
-    <div className="app">
+    <div className="absolute flex flex-col justify-between items-center w-[100%] h-min-[500vh] h-fit bg-gradient-to-br from-sky-200 to-sky-500 overflow-hidden">
       <Menu/>
-      <div className="headline">
-        <h1>
-          <span style={{ color: "white" }}>Deadlee Cereal </span>Webshop:
-          <span style={{ color: "white" }}> As good you would die for it</span>
-        </h1>
+      <Clouds />
+      <div className="w-[100%] h-[400vh]">
+
       </div>
     </div>
   );
