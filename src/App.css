@@ -228,7 +228,7 @@ li {
 
 /* brand box */
 
-.billboard #logoBox .imgBox {
+.imgBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,18 +236,11 @@ li {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  width: 100px;
-  height: 100px;
-  background-color: whitesmoke;
+  width: 20vh;
+  height: 20vh;
   border-radius: 50%;
-  margin: 5px;
-  -webkit-box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.202) inset, 0px -10px 10px rgba(0, 0, 0, 0.286) inset, 0px 10px 10px rgba(0, 0, 0, 0.202) inset, 10px 0px 10px rgba(0, 0, 0, 0.286) inset;
-          box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.202) inset, 0px -10px 10px rgba(0, 0, 0, 0.286) inset, 0px 10px 10px rgba(0, 0, 0, 0.202) inset, 10px 0px 10px rgba(0, 0, 0, 0.286) inset;
-}
-
-.billboard #logoBox .imgBox img {
-  width: 100px;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+  padding: 1vh;
+  margin: 2vh;
+  -webkit-box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.202) inset, 0px -2px 4px rgba(0, 0, 0, 0.286) inset, 0px 4px 4px rgba(0, 0, 0, 0.202) inset, 10px 0px 10px rgba(0, 0, 0, 0.286) inset;
+          box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.202) inset, 0px -1px 2px rgba(10, 10, 10, 0.286) inset, 0px 2px 2px rgba(0, 0, 0, 0.202) inset, 2px 0px 2px rgba(0, 0, 0, 0.286) inset;
 }
