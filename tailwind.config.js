@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'flowers':'./assets/pictures/blossom.jpg'
+        'paper':'url(./assets/pictures/paper.jpg)'
       },
       fontFamily: {
         'bebas': ['Bebas Neue', 'sans-serif'],

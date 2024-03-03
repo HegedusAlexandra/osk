@@ -225,3 +225,29 @@ li {
   'GRAD' 0,
   'opsz' 24
 }
+
+/* brand box */
+
+.billboard #logoBox .imgBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  margin: 5px;
+  -webkit-box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.202) inset, 0px -10px 10px rgba(0, 0, 0, 0.286) inset, 0px 10px 10px rgba(0, 0, 0, 0.202) inset, 10px 0px 10px rgba(0, 0, 0, 0.286) inset;
+          box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.202) inset, 0px -10px 10px rgba(0, 0, 0, 0.286) inset, 0px 10px 10px rgba(0, 0, 0, 0.202) inset, 10px 0px 10px rgba(0, 0, 0, 0.286) inset;
+}
+
+.billboard #logoBox .imgBox img {
+  width: 100px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
