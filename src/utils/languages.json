@@ -1,0 +1,107 @@
+{
+    "hu":{
+        
+        "Menu":{
+            "OpenClose":["MENÜ","BEZÁRÁS"],
+            "aboutus":"rólunk",
+            "gallery":"galéria",
+            "contact":"elérhetőség"},
+        "Landing":{
+            "sideTextOne":"A KÖRNYÉK LEGOLCSÓBB RUHABOLTJA",
+            "headline":"NAGYMAMA GARDRÓBJA",
+            "sideTextTwo":"ANGOL IMPORT RUHÁK",
+            "checkItOut":"RUHÁK AMIKBE BELE FOGSZ SZERETNI"},
+        "Actual":{
+            "suggestion":"Itt a tavasz, ideje ruhatárat cserélni! Mi már készülünk!"},
+        "Billboard":{
+            "introduction":"Szeretnénk egy kis változatosságot a turkálók világában,ezért a termékeink egy nagyobb része Angliából érkezik,így tudjuk a folyamatosan alacsony árakat biztosítani Önöknek.Lepje meg magát az alacsony árakkal és találja meg a legjobb darabokat,kellemes környezetben nálunk a Nagymama Ruhásszekrényében.Nálunk folyamatosan cserélődő teenager-,hölgy- és férfiruha kínálatot talál.A ruhaátvétel nálunk máshogy működik!A ruhák átnézése után azonnal fizetünk,várakozási idő nélkül!(ruhadarabonként 1 euro)" },
+        "Opinion":{
+            "A legkirályabb second hand üzlet az országban! Sőt az univerzumban!": "Claudia 49 éves" ,
+            "Nagyon kedvesek és segítőkészek. Különösen tetszik a berendezése.": "Mária 55 éves",
+            "Csak ajánlani tudom ezt a boltot mindenkinek!!! Itt aztán ámul-bámul aki betér. Nem mindennapi cuccok és látvány fogadja. Ha szereted az egyedi holmikat, vagy valami igazán különlegesre vágysz itt megtalálod.": "Alexandra 31 éves",
+            "20 éve nem láttam ennyi punkot egy helyen... Mintha újra 15 éves lennék! :D": "Bruno 35 éves",
+            "A legjobb hely👍 a divat es az eredetiseg szentélye": "Kinga 22 éves",
+            "Super extrém és máshol nem kapható farmerok cipők pólók kabátok nagy választéka. Tündér lányokkal nem csak punkoknak! :) Érdemes felkeresni.." : "Thomas 28 éves",
+            "A város egyik legszínesebb pontja, ami az üzletet illeti a ruhák és kiegészítők kis kincsesládája. Nagyon kedvesek az itt dolgozók, a vásárlók. Kutyabarát hely!!!!" : "Eugen 66éves"},
+        "Information":{
+            "open":["NYITVATARTÁS"],
+            "days":{"Hétfő":"12:00 - 18:00",
+                    "Kedd":"Zárva",
+                    "Szerda":"8:00 - 14:00",
+                    "Csütörtök":"12:00 - 18:00",
+                    "Péntek":"Zárva",
+                    "Szombat":"8:00 - 14:00",
+                    "Vasárnap":"Zárva"}},
+        "Scroll":["Ugrás az elejére"]
+            
+    },
+    "de":{
+        
+        "Menu":{
+            "OpenClose":["MENU","SCHLIESSEN"],
+            "aboutus":"über uns",
+            "gallery":"galerie",
+            "contact":"kontakt"},
+        "Landing":{
+            "sideTextOne":"DAS BILLIGSTE KLEIDUNGSGESCHÄFT UMGEBEN",
+            "headline":"OMA’S KLEIDERSCHRANK",
+            "sideTextTwo":"ENGLISCHE IMPORT-KLEIDUNG",
+            "checkItOut":"KLEIDER, DIE SIE LIEBEN WERDEN"} ,
+        "Actual":{
+                "suggestion":"Der Frühling ist da, es ist Zeit, Ihre Garderobe zu ändern! Wir bereiten uns vor!"},
+        "Billboard":{
+            "introduction":"Wir möchten eine kleine Abwechslung in die Welt der Secondhand-Läden bringen,deshalb kommt ein Teil unserer Klamotten aus England,wodurch wir die niedrigen Preise versichern.Lassen Sie sich von den billigen Preisen überraschen und suchen Sie die besten Teile in angnehmer Atmosphäre,bei uns in Oma's Kleiderschrank.Bei uns finden Sie ständig wchselnde Teenager-,Damen- und Herrenkleidung.Die Warenannahme läuft bei uns somit anders ab.Nach der Durchsuchung der Klamotten,bekommen Sie direkt einem Betrag in Bargeld ohne Wartezeit.Aber wegen den niedrigen Preisen liegt dieser Betrag bei 1 Euro pro Stück"},
+            "Opinion":{
+                "Der beste Second-Hand-Laden des Landes! Eigentlich im Universum!": "Claudia, 49 Jahre alt",
+                "Sie sind sehr nett und hilfsbereit. Besonders gefällt mir die Einrichtung.": "Mária, 55 Jahre alt",
+                "Ich kann diesen Laden nur jedem empfehlen!!! Jeder, der hier reinkommt, staunt. Sie werden von ungewöhnlichen Dingen und Sehenswürdigkeiten begrüßt. Wenn Sie das Besondere mögen oder etwas ganz Besonderes wollen, werden Sie hier fündig.": " Alexandra, 31 Jahre",
+                "Ich habe seit 20 Jahren nicht mehr so ​​viele Punks auf einem Haufen gesehen... Es ist, als wäre ich wieder 15 Jahre alt! :D": "Bruno, 35 Jahre alt",
+                "Der beste Ort👍 das Heiligtum der Mode und Originalität": "Kinga, 22 Jahre alt",
+                "Super extrem und eine große Auswahl an Jeans, Schuhen, T-Shirts und Jacken, die es sonst nirgendwo gibt. Mit Feenmädchen, nicht nur für Punks! :) Ein Besuch lohnt sich.":"Thomas, 28 Jahre alt",
+                "Einer der buntesten Orte der Stadt, was den Laden betrifft, ist eine kleine Schatzkiste mit Kleidung und Accessoires. Die Mitarbeiter und Kunden hier sind sehr nett. Hundefreundlicher Ort!!!!" : "Eugen, 66 Jahre alt"},
+        "Information":{
+            "open":["ÖFFNUNGSZEITEN"],
+            "days":{"Montag":"12:00 - 18:00",
+                    "Dienstag":"Abgeschlossen",
+                    "Mittwoch":"8:00 - 14:00",
+                    "Donnerstag":"12:00 - 18:00",
+                    "Freitag":"Abgeschlossen",
+                    "Samstag":"8:00 - 14:00",
+                    "Sonntag":"Abgeschlossen"}},
+        "Scroll":["Zum Anfang springen"]
+    },
+    "en":{
+        
+        "Menu":{
+            "OpenClose":["MENU","CLOSE"],
+            "aboutus":"about us",
+            "gallery":"gallery",
+            "contact":"contact"},
+        "Landing":{
+            "sideTextOne":"THE CHEAPEST CLOTHING SHOP AROUND",
+            "headline":"GRANDMA'S WARDROBE",
+            "sideTextTwo":"ENGLISH IMPORT CLOTHES",
+            "checkItOut":"CLOTHES YOU WILL FALL IN LOVE"} ,
+        "Actual":{
+            "suggestion":"Spring is here, it's time to change your wardrobe! We are getting ready!"},
+        "Billboard":{
+            "introduction":"We want a bit of variety in the world of rummaging, so most of our products come from England, so we can provide you with consistently low prices. Surprise yourself with the low prices and find the best pieces in a pleasant environment in the Grandma's Wardrobe. We have a constantly changing teenager, women and men clothing. The collection of clothes works differently with us! We pay immediately after inspecting the clothes, without waiting time! (1 euro per piece of clothing)"},
+            "Opinion":{"The best second-hand store in the country! In fact, in the universe!": "Claudia  49 years old",
+            "They are very nice and helpful. I especially like the furnishings.": "Mária  55 years old",
+            "I can only recommend this store to everyone!!! Everyone who comes in here is amazed. You will be greeted by unusual things and sights. If you like unique things or want something really special, you will find it here.": "Alexandra, 31 years old",
+            "I haven't seen so many punks in one place for 20 years... It's like I'm 15 years old again! :D": "Bruno  35 years old",
+            "The best place👍 the sanctuary of fashion and originality": "Kinga  22 years old",
+            "Super extreme and a large selection of jeans, shoes, t-shirts and jackets not available anywhere else. With fairy girls, not just for punks! :) Worth a visit." : "Thomas  28 years old",
+            "One of the most colorful spots in the city, as far as the store is concerned, is a little treasure chest of clothes and accessories. The employees and customers here are very nice. Dog-friendly place!!!!" : "Eugen  66 years old"},
+        "Information":{
+            "open":["OPENING HOURS"],
+            "days":{"Monday":"12:00 - 18:00",
+                    "Tueasday":"Closed",
+                    "Wednesday":"8:00 - 14:00",
+                    "Thursday":"12:00 - 18:00",
+                    "Friday":"Closed",
+                    "Saturday":"8:00 - 14:00",
+                    "Sunday":"Closed"}},
+        "Scroll":["Jump to the beginning"]
+    }
+}
