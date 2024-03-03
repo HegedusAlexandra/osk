@@ -13,11 +13,10 @@ const images = importAll(
   require.context("../assets/clouds", false, /\.(png|jpe?g|svg)$/)
 );
 
-const size = 5500;
 const width = window.innerWidth;
 export default function Clouds() {
   return (
-    <div className="absolute w-[100%] -z-2">
+    <div className="absolute w-[100%] h-[500vh] z-1">
       {Object.values(images).map((val) => (
         <img
           className={
@@ -31,8 +30,8 @@ export default function Clouds() {
           key={val}
           alt="combo"
           style={{
-            top: `${Math.random()}` * size - 400,
-            width: (`${Math.random()}` * width * 3) / 4 + 800,
+            top: `${Math.random()* 500-40}vh` ,
+            width: `${Math.random()* width * 3/ 4 + 80} vw` ,
           }}
         />
       ))}

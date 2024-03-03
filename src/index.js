@@ -10,7 +10,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ProductSummary from "./pages/ProductSummary";
-import ProductListContainer from "./components/ProductListContainer";
 import ProductList from "./pages/ProductList";
 
 const router = createBrowserRouter([
