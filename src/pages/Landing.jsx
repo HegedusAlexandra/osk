@@ -16,7 +16,7 @@ export default function Landing() {
       fontSize: scrolled ? "3vh" : "16vh",
       height: scrolled ? '6vh' : '20vh',
       top: 0,
-      zIndex: 11,
+      zIndex: 20,
       transition: { duration: 1 }
     });
   }, [scrolled, controls]);
@@ -31,10 +31,8 @@ export default function Landing() {
         >
           OMASKLEIDERSCHRANK
         </motion.h2>
-        <h1 className="font-montserrat text-[2vh]">
-          FOR THOSE WHO LOVE FASHION AND HAVE CREATIVITY LUXURY SECONDHAND
-          BOUTIQUE <br />
-          IN THE HEART OF ILLERTISSEN AFFORDABLE AND SOPHISTICATED
+        <h1 className="font-montserrat text-[2vh] -translate-y-[3vh]">
+          IN THE HEART OF ILLERTISSEN AFFORDABLE AND SOPHISTICATED SECONDHAND CLOTHING SHOP
         </h1>
         <NavLink
           to="/productlist"
