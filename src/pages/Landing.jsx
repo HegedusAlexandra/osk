@@ -22,10 +22,9 @@ export default function Landing() {
   }, [scrolled, controls]);
 
   return (
-    <div className="w-[100%] h-[400vh]">
+    <div className="w-[100%] h-[100vh] overflow-hidden">
       <div className="flex flex-col items-center w-[100%] h-[100vh] pt-[18vh]">
-        <motion.h2
-         
+        <motion.h2         
           animate={controls}
           className="flex justify-center items-center font-bebas text-[14vh] "
         >
@@ -36,13 +35,13 @@ export default function Landing() {
         </h1>
         <NavLink
           to="/productlist"
-          className="absolute z-10 flex justify-center items-center top-[60vh] w-[6vw] h-[4vh] uppercase font-afacad text-white font-regular bg-sky-800 opacity-100 rounded-md"
+          className="absolute z-10 flex justify-center items-center top-[50vh] w-[6vw] h-[4vh] uppercase font-afacad text-white font-regular bg-sky-800 opacity-100 rounded-md"
         >
           Shop
         </NavLink>
         <img
           src={bridge}
-          className="absolute z-1 w-[100vw] top-[11vh] opacity-[50%]"
+          className=" w-[100vw] opacity-[50%]"
         />
         <img
           src={noc}

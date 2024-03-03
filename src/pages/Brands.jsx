@@ -1,0 +1,40 @@
+import React from 'react'
+import RL from "../assets/pictures/RL.png";
+import SO from "../assets/pictures/SO.png";
+import TT from "../assets/pictures/TT.png";
+import TH from "../assets/pictures/TH.png";
+import ONLY from "../assets/pictures/ONLY.png";
+import ADIDAS from "../assets/pictures/ADIDAS.png";
+import ESPRIT from "../assets/pictures/ESPRIT.png";
+import PUMA from "../assets/pictures/PUMA.png";
+
+export default function Brands() {
+  return (
+    <div className='w-[100%] h-[30vh] bg-white/80 flex flex-row'>
+    <div className="imgBox">
+      <img src={RL} alt="logo" />
+    </div>
+    <div className="imgBox">
+      <img src={ONLY} alt="logo" />
+    </div>
+    <div className="imgBox">
+      <img src={PUMA} alt="logo" />
+    </div>
+    <div className="imgBox">
+      <img src={TT} alt="logo" />
+    </div>
+    <div className="imgBox">
+      <img src={TH} alt="logo" />
+    </div>
+    <div className="imgBox">
+      <img src={ADIDAS} alt="logo" />
+    </div>
+    <div className="imgBox">
+      <img src={ESPRIT} alt="logo" />
+    </div>
+    <div className="imgBox">
+      <img src={SO} alt="logo" />
+    </div>
+  </div>
+  )
+}
