@@ -17,7 +17,7 @@ export default function Landing() {
       height: scrolled ? '6vh' : '20vh',
       top: 0,
       zIndex: 11,
-      transition: { duration: 1.5 }
+      transition: { duration: 1 }
     });
   }, [scrolled, controls]);
 

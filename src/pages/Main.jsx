@@ -33,7 +33,7 @@ useEffect(() => getData(),[])
     <div className='absolute z-2 w-[100%] h-[500vh] bg-transparent'>
         <Menu />
         <Landing/>
-       {/*  <Contact data={data || []}/> */}
+        <Contact data={data.Information}/> 
     </div>
   )
 }
