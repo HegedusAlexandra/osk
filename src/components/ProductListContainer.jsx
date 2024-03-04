@@ -4,7 +4,8 @@ import {
   incrementQuantity,
   decrementQuantity
 } from "../redux/slices/productSlice";
-import ProductList from "./ProductList";
+
+import PicCard from "./PicCard";
 
 const ProductListContainer = () => {
   const products = useSelector((state) => state.products.products);
@@ -19,12 +20,17 @@ const ProductListContainer = () => {
   };
 
   return (
-    <div className="w-[100%] h-[90vh] bg-yellow-200">
-      <ProductList
-        products={products}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-      />
+    <div className="flex flex-row justify-between flex-wrap w-[100%] px-[2.5%] py-[10vh]">
+      {products.map((product) => (
+        <div className="w-[49.5%] mt-[1.5%] gap-[1%]">
+          <PicCard
+            atr={"object-cover object-bottom"}
+            product={product}
+            handleDecrement={handleDecrement}
+            handleIncrement={handleIncrement}
+          />
+        </div>
+      ))}
     </div>
   );
 };

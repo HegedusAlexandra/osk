@@ -33,7 +33,7 @@ export default function Main() {
 
   return (
     <div className="absolute z-2 w-[100%] h-[500vh] bg-transparent">
-      <Menu />
+      <Menu screen={'home'}/>
       <Landing />
       <TopPics />
       <Brands />

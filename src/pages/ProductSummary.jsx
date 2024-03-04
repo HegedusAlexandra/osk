@@ -8,7 +8,7 @@ export default function ProductSummary() {
 
   return (
     <div className="schoolbook_square">
-      <Menu />
+      <Menu screen={'sum'}/>
       <div className="headline2">
         <h2>choosen products</h2>
       </div>

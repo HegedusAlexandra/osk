@@ -8,7 +8,7 @@ export default function Contact({ data }) {
     >
       <div
         id="information"
-        className="flex flex-row justify-center items-center w-[95%] h-[70vh] bg-white backdrop-blur-xl shadow-xl rounded-md"
+        className="flex flex-row justify-center items-center w-[95%] h-[70vh] bg-white backdrop-blur-xl imgBoxShadow rounded-sm"
       >
         <div className="flex flex-row justify-center items-center w-[50%]">
           <div className="w-[50%] h-[50vh] flex justify-center items-center">
