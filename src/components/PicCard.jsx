@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { variants } from "../utils/animations";
+import { useInView } from "react-intersection-observer";
 
 export default function PicCard({
   src,
@@ -8,14 +11,29 @@ export default function PicCard({
   handleIncrement,
   screen
 }) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visibleCard");
+    }
+  }, [controls, inView]);
+
   return (
-    <div className="w-[100%] overflow-hidden">
+    <motion.div
+    ref={ref}
+    initial="hidden"
+    animate={controls}
+    variants={variants}
+      className="w-[100%] overflow-hidden"
+    >
       <img
         alt="topPic1"
         src={product ? product.url : src}
-        className={`imgBoxShadow w-[100%] ${screen === 'cart' ? 'h-[18vh]' : 'h-[70vh]'} bg-stone-300 rounded-sm object-cover ${
-          product ? product.atr : atr
-        }`}
+        className={`imgBoxShadow w-[100%] ${
+          screen === "cart" ? "h-[18vh]" : "h-[70vh]"
+        } bg-stone-300 rounded-sm object-cover ${product ? product.atr : atr}`}
       />
       {product && (
         <div
@@ -41,6 +59,6 @@ export default function PicCard({
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
