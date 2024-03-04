@@ -9,6 +9,7 @@ import {
   incrementQuantity,
   decrementQuantity
 } from "../redux/slices/productSlice";
+import MobileMenu from "../components/MobileMenu";
 
 export default function ProductSummary() {
   const products = useSelector((state) => state.products.products);
@@ -27,7 +28,7 @@ export default function ProductSummary() {
 
   return (
     <div className="w-[100%]">
-      <Menu screen={"sum"} />
+     {window.innerWidth > 780 ? <Menu screen={"sum"} /> : <MobileMenu/>}
       <div className="flex flex-col justify-between items-between w-[100%] px-[1.5vw] font-montserrat">
         <div className="headline2">
           <h2>KOSÁR</h2>

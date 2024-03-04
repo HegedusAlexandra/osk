@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
 import { useScrollNotTop } from "../hooks/scrollY";
 
-function Menu({screen}) {
+function Menu({ screen }) {
   const scrolled = useScrollNotTop();
 
   return (
@@ -11,18 +11,15 @@ function Menu({screen}) {
         scrolled && "bg-white"
       }`}
     >
-      
       <div className="font-bebas bg-white px-[2px]">OMA'S</div>
-      {screen !== 'home' &&  <NavLink
+      {screen !== "home" && (
+        <NavLink
           className="absolute flex justify-center items-center font-bebas text-[3vh] translate-x-[88vh]"
           to="/"
         >
-         <h2         
-        
-      >
-        OMASKLEIDERSCHRANK
-      </h2>
-        </NavLink> }
+          <h2>OMASKLEIDERSCHRANK</h2>
+        </NavLink>
+      )}
       <div className="flex flex-row gap-[2vw]">
         <NavLink
           className="size-[4vh] flex justify-center items-center rounded-sm"

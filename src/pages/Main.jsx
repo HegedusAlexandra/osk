@@ -7,6 +7,7 @@ import Testimonials from "./Testimonials";
 import Brands from "./Brands";
 import TopPics from "./TopPics";
 import Footer from "./Footer";
+import MobileMenu from "../components/MobileMenu";
 
 export default function Main() {
   useEffect(() => console.log(window.scrollY), [window.scrollY > 700]);
@@ -33,7 +34,7 @@ export default function Main() {
 
   return (
     <div className="absolute z-2 w-[100%] h-[500vh] bg-transparent">
-      <Menu screen={'home'}/>
+      {window.innerWidth > 780 ? <Menu screen={"home"} /> : <MobileMenu />}
       <Landing />
       <TopPics />
       <Brands />

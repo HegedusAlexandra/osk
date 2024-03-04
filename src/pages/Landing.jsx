@@ -12,9 +12,9 @@ export default function Landing() {
 
   useEffect(() => {
     controls.start({   
-      color: scrolled ? '#431407' : 'black',
+      color: scrolled ? '#431407' : '#000',
       position: scrolled ? "fixed" : "static",
-      fontSize: scrolled ? "3vh" : "16vh",
+      fontSize: scrolled ? "3vh" : `${window.innerWidth > 780 ? '16vh' : '6vh'}`,
       height: scrolled ? '6vh' : '20vh',
       top: 0,
       zIndex: 20,
@@ -23,31 +23,31 @@ export default function Landing() {
   }, [scrolled, controls]);
 
   return (
-    <div className="w-[100%] h-[100vh] overflow-hidden">
+    <div className="w-[100%] md:h-[100vh] h-[90vh] overflow-hidden">
       <Cloud/> 
-      <div className="flex flex-col items-center w-[100%] h-[100vh] pt-[18vh]">
+      <div className="flex flex-col items-center w-[100%] md:h-[100vh] h-[90vh] md:pt-[18vh]">
         <motion.h2         
           animate={controls}
-          className="flex justify-center items-center font-bebas text-[14vh] "
+          className="flex justify-center md:items-center items-end font-bebas text-[7vh] md:text-[14vh] "
         >
           OMASKLEIDERSCHRANK
         </motion.h2>
-        <h1 className="font-afacad text-amber-950 text-[2vh] -translate-y-[3vh]">
+        <h1 className="font-afacad text-amber-950 text-[2vh] md:-translate-y-[3vh] w-[80%] md:w-[100%] text-center">
           IN THE HEART OF ILLERTISSEN AFFORDABLE AND SOPHISTICATED SECONDHAND CLOTHING SHOP
         </h1>
         <NavLink
           to="/productlist"
-          className="absolute z-10 flex justify-center items-center top-[50vh] w-[6vw] h-[4vh] uppercase font-afacad text-amber-950 font-bold bg-[#DFBC9E] opacity-100 rounded-md imgBoxShadow"
+          className="absolute z-10 flex justify-center items-center top-[50vh] md:w-[6vw] w-[100px] h-[4vh] uppercase font-afacad text-amber-950 font-bold bg-[#DFBC9E] opacity-100 rounded-md imgBoxShadow"
         >
           Shop
         </NavLink>
-        <img
+        {window.innerWidth > 780 && <img
           src={bridge}
-          className=" w-[100vw] opacity-[50%]"
-        />
+          className="w-[100vw] opacity-[50%] md:translate-y-0 translate-y-[60vh]"
+        />}
         <img
           src={noc}
-          className="absolute z-2 h-[80vh] top-[20vh] left-[10vh] uppercase"
+          className="absolute md:z-2 md:h-[80vh] h-[60vh] md:top-[20vh] top-[30vh] md:left-[10vh] left-0 uppercase"
         />
       </div>
     </div>

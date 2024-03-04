@@ -5,7 +5,7 @@ import instagram from "../assets/svg/instagram.svg";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col items-center justify-center w-[100%] h-[100vh] bg-black">
+    <div className="flex flex-col items-center justify-center w-[100%] h-[100vh] bg-black overflow-hidden">
       <div className="flex flex-row justify-center py-[8vh] w-[100%] px-[8%]">
         <div className="flex flex-col items-start flex-1 justify-between h-[40vh] py-[10vh] text-[#afafaf]">
           <div className="flex flex-row ml-[2vh]">
