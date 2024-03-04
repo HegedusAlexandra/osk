@@ -1,21 +1,27 @@
-import React from 'react'
+import React from "react";
 
-export default function Contact({data}) {
+export default function Contact({ data }) {
   return (
-    <div className="w-[100%] h-[80vh] flex flex-row justify-center items-start bg-white/80" id="informationcontainer">
-      <div id="information" className="flex flex-row justify-center items-center w-[80%] h-[70vh] bg-white/40 backdrop-blur-xl shadow-xl rounded-md">
+    <div
+      className="w-[100%] h-[80vh] flex flex-row justify-center items-start bg-white/80"
+      id="informationcontainer"
+    >
+      <div
+        id="information"
+        className="flex flex-row justify-center items-center w-[95%] h-[70vh] bg-white backdrop-blur-xl shadow-xl rounded-md"
+      >
         <div className="flex flex-row justify-center items-center w-[50%]">
           <div className="w-[50%] h-[50vh] flex justify-center items-center">
-            <table className='w-[80%]'>
+            <table className="w-[80%]">
               <thead>
-                <tr className='h-[10vh]'>
+                <tr className="h-[10vh]">
                   <td>{data && data.open}</td>
                 </tr>
               </thead>
               <tbody>
                 {data &&
                   Object.keys(data.days).map((key, i) => (
-                    <tr className='h-[5vh]' key={i}>
+                    <tr className="h-[5vh]" key={i}>
                       <td>{key}</td>
                       <td>{data.days[key]}</td>
                     </tr>
@@ -31,10 +37,10 @@ export default function Contact({data}) {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className='w-[100%] h-[70vh]'
+            className="w-[100%] h-[70vh]"
           ></iframe>
         </div>
       </div>
     </div>
-  )
+  );
 }

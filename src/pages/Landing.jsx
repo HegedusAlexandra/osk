@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import noc from "../assets/pictures/no_cloud_2.png";
 import bridge from "../assets/pictures/bridge3.png";
 import { NavLink } from "react-router-dom";
-import { easeInOut, motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useScrollNotTop } from "../hooks/scrollY";
+import Cloud from "../components/Cloud";
 
 export default function Landing() {
   const controls = useAnimation();
@@ -23,6 +24,7 @@ export default function Landing() {
 
   return (
     <div className="w-[100%] h-[100vh] overflow-hidden">
+      <Cloud/> 
       <div className="flex flex-col items-center w-[100%] h-[100vh] pt-[18vh]">
         <motion.h2         
           animate={controls}
