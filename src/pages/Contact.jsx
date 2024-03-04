@@ -2,18 +2,9 @@ import React from 'react'
 
 export default function Contact({data}) {
   return (
-    <div className="w-[100%] h-[100vh] flex flex-row justify-center items-center" id="informationcontainer">
-      <div id="information" className="flex flex-row justify-center items-center w-[80%] h-[70vh] mt-[15vh] bg-white/40 backdrop-blur-xl shadow-xl rounded-md">
+    <div className="w-[100%] h-[80vh] flex flex-row justify-center items-start bg-white/80" id="informationcontainer">
+      <div id="information" className="flex flex-row justify-center items-center w-[80%] h-[70vh] bg-white/40 backdrop-blur-xl shadow-xl rounded-md">
         <div className="flex flex-row justify-center items-center w-[50%]">
-          <div className="flex flex-col justify-center items-center w-[50%] h-[50vh] font-bold border-r-2 border-solid border-#a81e55">
-            <span className="material-symbols-outlined">location_on</span>
-            <p>89269 Illertissen Marktpl. 6</p>
-            <span className="material-symbols-outlined">mail</span>
-            <p>omaskleiderschrank@gmail.com</p>
-            <span className="material-symbols-outlined">call</span>
-            <p>0000 666 789 987</p>
-          </div>
-
           <div className="w-[50%] h-[50vh] flex justify-center items-center">
             <table className='w-[80%]'>
               <thead>

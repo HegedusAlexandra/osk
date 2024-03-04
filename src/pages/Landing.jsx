@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import noc from "../assets/pictures/no_cloud_2.png";
 import bridge from "../assets/pictures/bridge3.png";
 import { NavLink } from "react-router-dom";
-import { motion, useAnimation } from "framer-motion";
+import { easeInOut, motion, useAnimation } from "framer-motion";
 import { useScrollNotTop } from "../hooks/scrollY";
 
 export default function Landing() {
@@ -17,7 +17,7 @@ export default function Landing() {
       height: scrolled ? '6vh' : '20vh',
       top: 0,
       zIndex: 20,
-      transition: { duration: 1 }
+      transition: { duration: 1 ,ease: "circOut" }
     });
   }, [scrolled, controls]);
 
@@ -30,12 +30,12 @@ export default function Landing() {
         >
           OMASKLEIDERSCHRANK
         </motion.h2>
-        <h1 className="font-montserrat text-[2vh] -translate-y-[3vh]">
+        <h1 className="font-afacad text-amber-950 text-[2vh] -translate-y-[3vh]">
           IN THE HEART OF ILLERTISSEN AFFORDABLE AND SOPHISTICATED SECONDHAND CLOTHING SHOP
         </h1>
         <NavLink
           to="/productlist"
-          className="absolute z-10 flex justify-center items-center top-[50vh] w-[6vw] h-[4vh] uppercase font-afacad text-white font-regular bg-sky-800 opacity-100 rounded-md"
+          className="absolute z-10 flex justify-center items-center top-[50vh] w-[6vw] h-[4vh] uppercase font-afacad text-amber-950 font-bold bg-[#DFBC9E] opacity-100 rounded-md imgBoxShadow"
         >
           Shop
         </NavLink>

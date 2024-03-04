@@ -8,6 +8,7 @@ const scrolled = useScrollNotTop()
 
   return (
     <div className={`flex items-center fixed z-20 w-[100%] h-[6vh] py-2 px-[10vw] ${scrolled && 'bg-white'}`}>
+      <div>
       <NavLink
         className={"link"}
         to="/"
@@ -47,7 +48,7 @@ const scrolled = useScrollNotTop()
       >
         CART
       </NavLink>
-    </div>
+    </div></div>
   );
 }
 

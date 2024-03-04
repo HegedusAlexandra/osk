@@ -35,10 +35,10 @@ export default function Main() {
     <div className="absolute z-2 w-[100%] h-[500vh] bg-transparent">
       <Menu />
       <Landing />
-      <TopPics />      
+      <TopPics /> <Brands />     
       <AboutUs />
       <Testimonials />
-      <Brands />
+      
       <Contact data={data.Information} />
       <Footer />
     </div>

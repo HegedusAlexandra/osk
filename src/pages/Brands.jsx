@@ -10,7 +10,7 @@ import PUMA from "../assets/pictures/PUMA.png";
 
 export default function Brands() {
   return (
-    <div className="w-[100%] h-[30vh] flex flex-row justify-between px-[3vh]">
+    <div className="w-[100%] h-[30vh] flex flex-row justify-between items-center px-[4vh] pb-[10vh] bg-white/80">
       <div className="imgBox">
         <img src={RL} alt="logo" />
       </div>

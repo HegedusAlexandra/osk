@@ -236,11 +236,14 @@ li {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  width: 20vh;
-  height: 20vh;
-  border-radius: 50%;
+  width: 24vh;
+  height: 24vh;
   padding: 1vh;
-  margin: 2vh;
-  -webkit-box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.202) inset, 0px -2px 4px rgba(0, 0, 0, 0.286) inset, 0px 4px 4px rgba(0, 0, 0, 0.202) inset, 10px 0px 10px rgba(0, 0, 0, 0.286) inset;
-          box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.202) inset, 0px -1px 2px rgba(10, 10, 10, 0.286) inset, 0px 2px 2px rgba(0, 0, 0, 0.202) inset, 2px 0px 2px rgba(0, 0, 0, 0.286) inset;
+  margin: 1vh;
+  background-color: #FDFAF1;
+  box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.202) , 0px -1px 2px rgba(10, 10, 10, 0.286) , 0px 2px 2px rgba(0, 0, 0, 0.202) , 2px 0px 2px rgba(0, 0, 0, 0.286) ;
+}
+
+.imgBoxShadow {
+  box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.202) , 0px -1px 2px rgba(10, 10, 10, 0.286) , 0px 2px 2px rgba(0, 0, 0, 0.202) , 2px 0px 2px rgba(0, 0, 0, 0.286) ;
 }
