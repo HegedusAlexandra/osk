@@ -18,10 +18,10 @@ export default function AboutUs() {
         </span>
         <span>1 Euro pro Stück</span>
       </p>
-      <div className="w-[60%] bg-white/80 overflow-hidden rounded-sm ">
+      <div className="w-[60%] bg-white/80 overflow-hidden rounded-sm bg-paper ">
         <img
           src={paper}
-          className="w-[100%] opacity-60 rotate-[20deg] translate-x-[14vh] -translate-y-[18vw] rounded-sm"
+          className="w-[100%] opacity-100 rotate-[20deg] translate-x-[14vh] -translate-y-[18vw] rounded-sm"
         />
       </div>
     </div>
