@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Contact({ data }) {
+  const {t} = useTranslation()
+
   return (
     <div
       className="w-[100%] h-[80vh] flex flex-row justify-center items-start bg-white/80"
@@ -14,16 +17,15 @@ export default function Contact({ data }) {
           <div className="w-[50%] h-[50vh] flex justify-center items-center">
             <table className="w-[80%]">
               <thead>
-                <tr className="h-[10vh]">
-                  <td>{data && data.open}</td>
+                <tr className="h-[12vh] text-[3vh] font-bold">
+                  <td>{t('information.open')}</td>
                 </tr>
               </thead>
               <tbody>
-                {data &&
-                  Object.keys(data.days).map((key, i) => (
-                    <tr className="h-[5vh]" key={i}>
-                      <td>{key}</td>
-                      <td>{data.days[key]}</td>
+                {[1,2,3,4,5,6,7].map((el) => (
+                    <tr className="h-[5vh]" key={el}>
+                      <td>{t(`information.days.${el}.day`)}</td>
+                      <td>{t(`information.days.${el}.time`)}</td>
                     </tr>
                   ))}
               </tbody>

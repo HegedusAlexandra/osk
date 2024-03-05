@@ -34,15 +34,14 @@ export default function Landing() {
         >
           OMASKLEIDERSCHRANK
         </motion.h2>
-        <h1 className="font-afacad text-amber-950 text-[2vh] md:-translate-y-[3vh] w-[80%] md:w-[100%] text-center">
-          {t('name')}
-          IN THE HEART OF ILLERTISSEN AFFORDABLE AND SOPHISTICATED SECONDHAND CLOTHING SHOP
+        <h1 className="font-afacad text-amber-950 text-[2vh] md:-translate-y-[3vh] w-[80%] md:w-[30%] text-center">
+          {t('landing.title').toUpperCase()}
         </h1>
         <NavLink
           to="/productlist"
-          className="absolute z-10 flex justify-center items-center top-[50vh] md:w-[6vw] w-[100px] h-[4vh] uppercase font-afacad text-amber-950 font-bold bg-[#DFBC9E] opacity-100 rounded-md imgBoxShadow"
+          className="absolute z-10 flex justify-center items-center top-[50vh] md:w-[12vw] w-[100px] h-[4vh] uppercase font-afacad text-amber-950 font-bold bg-[#DFBC9E] opacity-100 rounded-md imgBoxShadow"
         >
-          Shop
+          {t('landing.button')}
         </NavLink>
         {window.innerWidth > 780 && <img
           src={bridge}

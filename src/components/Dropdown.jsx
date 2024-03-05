@@ -36,7 +36,7 @@ export default function DropdownComp() {
         /* placeholderClassName='flex flex-row ' 
         arrowClassName='bg-yellow-500'
         className=''  */
-        menuClassName="absolute text-amber-950"
+        menuClassName="absolute text-amber-950 bg-white p-2 pr-6 -translate-x-2 rounded-b-sm"
         controlClassName="flex flex-row "
         options={options.filter((val) => val !== selectedOption)}
         onChange={(option) => setSelectedOption(option.value)}
