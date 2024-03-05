@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export default function Contact({ data }) {
+export default function Contact() {
   const {t} = useTranslation()
 
   return (
