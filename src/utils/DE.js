@@ -1,6 +1,6 @@
 export const DE = {
     translation:{
-        name:'valami németül',
+        currency: "{{value, currency}} €",
         landing:{
             title:"Entdecke Verborgene Schätze im Herzen von Illertissen: Deine Anlaufstelle für Secondhand-Bekleidungsgeschäfte",
             button: 'Zeige die Kleidung'
@@ -68,6 +68,13 @@ export const DE = {
             sitemap:'Seitenübersicht',
             signup: "Melden Sie sich jetzt an, um aktuelle Kampagnen und exklusive Neuigkeiten zu erhalten.",
             submit:'ich melde mich an'
-        }        
+        },
+        cart:{
+            cart: "warenkorb",
+            empty: "Ihr Warenkorb ist derzeit leer, bitte wählen Sie etwas Schönes aus ",
+            selection: "unserer Auswahl.",
+            sum: "Gesamtsumme",
+            buy: "Ich bestelle es"
+        }       
     }
 }

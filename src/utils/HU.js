@@ -1,6 +1,6 @@
 export const HU = {    
     translation: {
-        name: 'valami',
+        currency: "{{value, currency}} Ft",
         landing:{
             title:"Fedezd fel a Rejtett Kincseket Illertissen Szívében: A Te Megbízható Használtruha Butikod",
             button:'Mutasd a ruhákat'
@@ -68,6 +68,13 @@ export const HU = {
             sitemap:'oldaltérkép',
             signup: "Iratkozzon fel most, hogy naprakész információkat kaphasson legfrissebb kampányainkról és kizárólagos frissítéseinkről.",
             submit:'feliratkozom'
-        }            
+        },
+        cart:{
+            cart: "kosár",
+            empty: "A kosara jelenleg üres, kérem válasszon valami kellemeset a ",
+            selection: "választékunkból.",
+            sum: "összesen",
+            buy: "Megrendelem"
+        }              
     }
 }

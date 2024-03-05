@@ -1,6 +1,6 @@
 export const EN = {    
     translation: {
-        name:'somthing',
+        currency: "{{value, currency}} $",
         landing:{
             title:"Discover Hidden Gems in the Heart of Illertissen: Your Go-To Secondhand Clothing Boutique",
             button: 'Show the clothes'
@@ -68,6 +68,13 @@ export const EN = {
             sitemap:'sitemap',
             signup:'Register now to stay in the loop with our latest campaigns and exclusive updates.',
             submit:'submit'
-        }        
+        },
+        cart:{
+            cart:'cart',
+            empty: 'Your cart is currently empty, please choose something delightful from ',
+            selection: 'our selection.',
+            sum:'total',
+            buy:'I want it'
+        }      
     }
 }

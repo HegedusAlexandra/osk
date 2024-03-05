@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { variants } from "../utils/animations";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
 
 export default function PicCard({
   src,
@@ -13,6 +14,20 @@ export default function PicCard({
 }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const { i18n } = useTranslation();
+  const language = i18n.language;
+
+  const changeCurr = useCallback((amount) => {
+    let res = 0;
+    if (language === "DE") {
+      res = amount;
+    } else if (language === "EN") {
+      res = Math.trunc(amount * 1.2);
+    } else {
+      res = amount * 380; // Assuming this is the conversion rate for currencies other than DE
+    }
+    return res;
+  },[language])
 
   useEffect(() => {
     if (inView) {
@@ -20,12 +35,16 @@ export default function PicCard({
     }
   }, [controls, inView]);
 
+  const formatCurrency = (amount) => {
+    return i18n.t("currency", { value: changeCurr(amount) });
+  };
+
   return (
     <motion.div
-    ref={ref}
-    initial="hidden"
-    animate={controls}
-    variants={variants}
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
       className="w-[100%] overflow-hidden"
     >
       <img
@@ -41,7 +60,7 @@ export default function PicCard({
           key={product.id}
         >
           <h2 className="text-[2vh]">{product.name}</h2>
-          <h2 className="text-[2vh]">{product.price} Ft</h2>
+          <h2 className="text-[2vh]">{formatCurrency(product.price)}</h2>
           <div className="flex justify-center items-center flex-row pr-[2vh] gap-[1vh]">
             <button
               className="flex justify-center items-center size-[2vh] bg-stone-200 rounded-full"
