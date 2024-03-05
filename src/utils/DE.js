@@ -63,6 +63,11 @@ export const DE = {
                     time:"Abgeschlossen"
                 },
             }
-        }
+        },
+        footer:{
+            sitemap:'Seitenübersicht',
+            signup: "Melden Sie sich jetzt an, um aktuelle Kampagnen und exklusive Neuigkeiten zu erhalten.",
+            submit:'ich melde mich an'
+        }        
     }
 }

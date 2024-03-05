@@ -2,14 +2,17 @@ import React from "react";
 import facebook from "../assets/svg/facebook.svg";
 import twitter from "../assets/svg/twitter.svg";
 import instagram from "../assets/svg/instagram.svg";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+const {t} = useTranslation()
+
   return (
     <div className="flex flex-col items-center justify-center w-[100%] h-[100vh] bg-black overflow-hidden">
       <div className="flex flex-row justify-center py-[8vh] w-[100%] px-[8%]">
         <div className="flex flex-col items-start flex-1 justify-between h-[40vh] py-[10vh] text-[#afafaf]">
           <div className="flex flex-row ml-[2vh]">
-            <p className="ml-[2vh]">SITEMAP</p>
+            <p className="ml-[2vh]">{t('footer.sitemap').toUpperCase()}</p>
           </div>
           <div className="flex flex-row items-center flex-1 ml-[4vh] gap-[2vh]">
             <img
@@ -34,9 +37,9 @@ export default function Footer() {
         </div>
         <div className="flex flex-col items-start justify-between flex-1 h-[40vh] py-[10vh] text-[#afafaf]">
           
-            <p className="text-[1.5vh]">Sign up here , if you want to receive news about our actual campaign</p>         
+            <p className="text-[1.5vh] w-[80%]">{t('footer.signup')}</p>         
             <input name="email" placeholder="email" className="border-b-[2px] border-solid border-white"/>
-            <button className="text-black bg-white rounded-sm w-[8vw] h-[4vh] text-center" type="submit">SUBMIT</button>
+            <button className="text-black bg-white rounded-sm w-[10vw] h-[4vh] text-center uppercase" type="submit">{t('footer.submit')}</button>
        
         </div>
         <div className="flex flex-col items-start justify-between flex-1 h-[40vh] py-[10vh] text-[#afafaf]">

@@ -63,7 +63,11 @@ export const EN = {
                     time:"Closed"
                 },
             }
-        }
-        
+        },
+        footer:{
+            sitemap:'sitemap',
+            signup:'Register now to stay in the loop with our latest campaigns and exclusive updates.',
+            submit:'submit'
+        }        
     }
 }

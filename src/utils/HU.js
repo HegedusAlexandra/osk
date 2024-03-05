@@ -63,6 +63,11 @@ export const HU = {
                     time:"Zárva"
                 },
             }
-        }        
+        },
+        footer:{
+            sitemap:'oldaltérkép',
+            signup: "Iratkozzon fel most, hogy naprakész információkat kaphasson legfrissebb kampányainkról és kizárólagos frissítéseinkről.",
+            submit:'feliratkozom'
+        }            
     }
 }
