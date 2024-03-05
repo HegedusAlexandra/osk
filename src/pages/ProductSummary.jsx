@@ -11,6 +11,7 @@ import {
 } from "../redux/slices/productSlice";
 import MobileMenu from "../components/MobileMenu";
 import { useTranslation } from "react-i18next";
+import OrderButton from "../components/OrderButton";
 
 export default function ProductSummary() {
   const products = useSelector((state) => state.products.products);
@@ -51,7 +52,7 @@ export default function ProductSummary() {
     <div className="w-[100%]">
       {window.innerWidth > 780 ? <Menu screen={"sum"} /> : <MobileMenu />}
       <div className="flex flex-col justify-between items-between w-[100%] px-[1.5vw] font-montserrat">
-        <div className="headline2">
+        <div className="headline2 md:-translate-x-[0vw] -translate-x-[4vw]">
           <h2>{t("cart.cart")}</h2>
         </div>
         <div className="m-[1vw]">
@@ -83,17 +84,16 @@ export default function ProductSummary() {
           )}
         </div>
         <div className="bottomContainer">
-          <h2 className="finalRes">
+          <h2 className="flex justify-end w-[50vw] md:text-[6vh] text-[3vh] pl-[2vh] pt-[6vh] self-end">
             {formatCurrency(
               products
                 .map((el) => el.price * el.quantity)
                 .reduce((acc, cur) => acc + cur, 0)
             )}
           </h2>
-          <button className="bottomButton">{t('cart.buy')}</button>
+          <OrderButton/>
         </div>
       </div>
-
       <Footer />
     </div>
   );

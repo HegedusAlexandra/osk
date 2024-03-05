@@ -56,12 +56,12 @@ export default function PicCard({
       />
       {product && (
         <div
-          className="flex flex-row justify-between items-center font-montserrat text-black absolute w-[40vw] h-[6vh] text-[2vh] bg-white -translate-y-[5vh] rounded-sm"
+          className="flex md:flex-row flex-col justify-between items-center font-montserrat text-black absolute md:w-[40vw] w-[48vw] md:h-[6vh] md:text-[2vh] bg-white -translate-y-[5vh] rounded-sm"
           key={product.id}
         >
-          <h2 className="text-[2vh]">{product.name}</h2>
+          <h2 className="md:text-[2vh] text-[1.4vh]">{product.name}</h2>
           <h2 className="text-[2vh]">{formatCurrency(product.price)}</h2>
-          <div className="flex justify-center items-center flex-row pr-[2vh] gap-[1vh]">
+          <div className="flex justify-center items-center flex-row pr-[2vh] gap-[1vh] py-[2vh] md:py-0">
             <button
               className="flex justify-center items-center size-[2vh] bg-stone-200 rounded-full"
               onClick={() => handleDecrement(product.id)}

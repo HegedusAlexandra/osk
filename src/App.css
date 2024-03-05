@@ -55,18 +55,6 @@ li {
   list-style: none;
 }
 
-.finalRes {
-  display: flex;
-  justify-content: end;
-  width: 50vw;
-  font-size: 6vh;
-  font-weight: 700;
-  color: black;
-  padding-left: 2vh;
-  padding-top: 6vh;
-  align-self: self-end;
-}
-
 .schoolbook_square {
   display: flex;
   flex-direction: column;
@@ -103,22 +91,6 @@ li {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-
-.bottomButton{
-  background-color: orangered;
-  width: 14vw;
-  height: 8vh;
-  align-self: self-end;
-  margin-bottom: 2vh;
-  border-radius: 4vh;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: xx-large;
-}
-
-.bottomButton:hover{
-  background-color: blue;
-  color: #efefef;
 }
 
 /* clouds */

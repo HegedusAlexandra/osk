@@ -5,16 +5,16 @@ import instagram from "../assets/svg/instagram.svg";
 import { useTranslation } from "react-i18next";
 
 export default function Footer() {
-const {t} = useTranslation()
+  const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col items-center justify-center w-[100%] h-[100vh] bg-black overflow-hidden">
-      <div className="flex flex-row justify-center py-[8vh] w-[100%] px-[8%]">
-        <div className="flex flex-col items-start flex-1 justify-between h-[40vh] py-[10vh] text-[#afafaf]">
-          <div className="flex flex-row ml-[2vh]">
-            <p className="ml-[2vh]">{t('footer.sitemap').toUpperCase()}</p>
+    <div id='footer' className="flex flex-col items-center justify-center w-[100%] h-[100vh] bg-black overflow-hidden">
+      <div className="flex md:flex-row flex-col justify-center md:items-end md:py-[8vh] pt-[16vh] w-[100%] h-[80vh] md:px-[6%] gap-[4vh] md:gap-[0vh]">
+        <div className="flex flex-col items-start justify-between flex-1 md:h-[40vh] h-[30vh] md:py-[10vh] text-[#afafaf]">
+          <div className="flex flex-row md:ml-[2vh]">
+            <p className="ml-[2vh]">{t("footer.sitemap").toUpperCase()}</p>
           </div>
-          <div className="flex flex-row items-center flex-1 ml-[4vh] gap-[2vh]">
+          <div className="flex flex-row items-center flex-1 md:ml-[4vh] ml-[2vh] gap-[2vh]">
             <img
               src={facebook}
               alt="facebook"
@@ -31,18 +31,25 @@ const {t} = useTranslation()
               className="size-[5vh] bg-white rounded-full"
             />
           </div>
-          <div className="flex flex-row ml-[2vh]">
+          <div className="flex flex-row md:ml-[2vh]">
             <p className="ml-[2vh]">© 2022 - 2024 OMASKLEIDERSCHRANK</p>
           </div>
         </div>
-        <div className="flex flex-col items-start justify-between flex-1 h-[40vh] py-[10vh] text-[#afafaf]">
-          
-            <p className="text-[1.5vh] w-[80%]">{t('footer.signup')}</p>         
-            <input name="email" placeholder="email" className="border-b-[2px] border-solid border-white"/>
-            <button className="text-black bg-white rounded-sm w-[10vw] h-[4vh] text-center uppercase" type="submit">{t('footer.submit')}</button>
-       
+        <div className="flex flex-col items-start justify-between flex-1 md:h-[40vh] h-[30vh] md:py-[10vh] text-[#afafaf] ml-[2vh]">
+          <p className="text-[1.5vh] w-[80%]">{t("footer.signup")}</p>
+          <input
+            name="email"
+            placeholder="email"
+            className="border-b-[2px] border-solid border-white"
+          />
+          <button
+            className="text-black bg-white rounded-sm md:w-[10vw] w-[30vw] h-[4vh] text-center uppercase"
+            type="submit"
+          >
+            {t("footer.submit")}
+          </button>
         </div>
-        <div className="flex flex-col items-start justify-between flex-1 h-[40vh] py-[10vh] text-[#afafaf]">
+        <div className="flex flex-col items-start justify-between flex-1 md:h-[40vh] h-[30vh] md:py-[10vh] text-[#afafaf]">
           <div className="flex flex-row ml-[2vh]">
             <span className="material-symbols-outlined">location_on</span>
             <p className="ml-[2vh]">89269 Illertissen Marktpl. 6</p>
@@ -57,7 +64,7 @@ const {t} = useTranslation()
           </div>
         </div>
       </div>
-      <h1 className="flex justify-center items-center w-[100%] h-[35vh] text-[26vh] text-amber-50 font-bebas">
+      <h1 className="flex justify-center items-center w-[100%] md:h-[35vh] h-[20vh] md:text-[26vh] text-[6vh] text-amber-50 font-bebas">
         OMASKLEIDERSCHRANK
       </h1>
     </div>
