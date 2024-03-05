@@ -54,7 +54,7 @@ export default function MobileMenu() {
             <div className="flex flex-row gap-[10vw]">
               <NavLink
                 className="size-[4vh] flex justify-center items-center rounded-sm"
-                to="/"
+                to="/osk"
                 style={({ isActive, isPending, isTransitioning }) => {
                   return {
                     color: isPending ? "red" : "black",

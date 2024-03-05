@@ -16,7 +16,7 @@ function Menu({ screen }) {
       {screen !== "home" && (
         <NavLink
           className="absolute flex justify-center items-center font-bebas text-[3vh] translate-x-[88vh]"
-          to="/"
+          to="/osk"
         >
           <h2>OMASKLEIDERSCHRANK</h2>
         </NavLink>
@@ -24,7 +24,7 @@ function Menu({ screen }) {
       <div className="flex flex-row gap-[2vw]">
         <NavLink
           className="size-[4vh] flex justify-center items-center rounded-sm"
-          to="/"
+          to="/osk"
           style={({ isActive, isPending, isTransitioning }) => {
             return {
               color: isPending ? "red" : "black",
