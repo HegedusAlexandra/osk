@@ -15,7 +15,7 @@ import '../src/utils/i18n'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/osk",
     element: <App/>,
   },
   {
