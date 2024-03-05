@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
 import { useScrollNotTop } from "../hooks/scrollY";
+import Dropdown from "../components/Dropdown";
 
 function Menu({ screen }) {
   const scrolled = useScrollNotTop();
@@ -60,7 +61,9 @@ function Menu({ screen }) {
         >
           <span className="material-symbols-outlined">shopping_cart</span>
         </NavLink>
+        <Dropdown/>
       </div>
+      
     </div>
   );
 }

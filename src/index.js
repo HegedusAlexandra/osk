@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import ProductSummary from "./pages/ProductSummary";
 import ProductList from "./pages/ProductList";
+import '../src/utils/i18n'
 
 const router = createBrowserRouter([
   {

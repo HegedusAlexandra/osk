@@ -5,10 +5,12 @@ import { NavLink } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useScrollNotTop } from "../hooks/scrollY";
 import Cloud from "../components/Cloud";
+import { useTranslation } from "react-i18next";
 
 export default function Landing() {
   const controls = useAnimation();
   const scrolled = useScrollNotTop();
+  const { t } = useTranslation();
 
   useEffect(() => {
     controls.start({   
@@ -33,6 +35,7 @@ export default function Landing() {
           OMASKLEIDERSCHRANK
         </motion.h2>
         <h1 className="font-afacad text-amber-950 text-[2vh] md:-translate-y-[3vh] w-[80%] md:w-[100%] text-center">
+          {t('name')}
           IN THE HEART OF ILLERTISSEN AFFORDABLE AND SOPHISTICATED SECONDHAND CLOTHING SHOP
         </h1>
         <NavLink
