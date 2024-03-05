@@ -7,7 +7,7 @@ import PicCardRow from "../components/PicCard";
 
 export default function TopPics() {
   return (
-    <div className="flex flex-col w-[100%] h-[160vh] bg-white/80">
+    <div className="flex flex-col w-[100%] md:h-[160vh] h-[150vh] bg-white/80">
       <div className="flex flex-row w-[95%] mx-[2.5%] mt-[2.5%] gap-[1%]">
         <PicCardRow src={pic1} atr={"object-cover object-center"} />
         <PicCardRow src={pic2} atr={"object-cover object-left-bottom"} />

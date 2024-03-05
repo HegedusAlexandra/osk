@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState,  useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import DropdownComp from "./Dropdown";
@@ -7,7 +7,10 @@ import { variants } from "../utils/animations";
 
 export default function MobileMenu() {
   const [isVisible, setIsVisible] = useState(false);
-  const { t } = useTranslation();
+  const { t ,i18n} = useTranslation();
+  const selectedLanguage = i18n.language
+
+  useEffect(() => setIsVisible(false),[selectedLanguage])
 
   return (
     <div className="fixed z-20 flex flex-row justify-between w-[100%] h-[8vh] bg-white">

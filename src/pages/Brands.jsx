@@ -10,29 +10,29 @@ import PUMA from "../assets/pictures/PUMA.png";
 
 export default function Brands() {
   return (
-    <div className="hidden w-[100%] md:h-[30vh] md:flex flex-row justify-between items-center px-[4vh] pb-[10vh] bg-white/80">
-      <div className="md:imgBox">
+    <div className="hidden w-[100%] h-[30vh] md:flex flex-row justify-between items-center px-[4vh] pb-[10vh] bg-white/80">
+      <div className="imgBox">
         <img src={RL} alt="logo" />
       </div>
-      <div className="md:imgBox">
+      <div className="imgBox">
         <img src={ONLY} alt="logo" />
       </div>
-      <div className="md:imgBox">
+      <div className="imgBox">
         <img src={PUMA} alt="logo" />
       </div>
-      <div className="md:imgBox">
+      <div className="imgBox">
         <img src={TT} alt="logo" />
       </div>
-      <div className="md:imgBox">
+      <div className="imgBox">
         <img src={TH} alt="logo" />
       </div>
-      <div className="md:imgBox">
+      <div className="imgBox">
         <img src={ADIDAS} alt="logo" />
       </div>
-      <div className="md:imgBox">
+      <div className="imgBox">
         <img src={ESPRIT} alt="logo" />
       </div>
-      <div className="md:imgBox">
+      <div className="imgBox">
         <img src={SO} alt="logo" />
       </div>
     </div>
