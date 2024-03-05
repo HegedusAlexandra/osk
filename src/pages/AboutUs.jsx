@@ -7,7 +7,7 @@ const {t} =useTranslation()
 
   return (
     <div className="flex flex-row w-[100%] h-[60vh] bg-white/80 overflow-hidden imgBoxShadow">
-      <p className="flex flex-col justify-between w-[40%] h-[60vh] p-[5vh] font-afacad uppercase text-[1.5vh] bg-[#DFBC9E]">
+      <p className="flex flex-col justify-between w-[40%] h-[60vh] p-[5vh] font-montserrat uppercase text-[1.5vh] bg-[#DFBC9E]">
         <span>
          {t('aboutus.introduction')}
         </span>

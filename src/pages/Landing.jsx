@@ -17,7 +17,7 @@ export default function Landing() {
       color: scrolled ? '#431407' : '#000',
       position: scrolled ? "fixed" : "static",
       fontSize: scrolled ? "3vh" : `${window.innerWidth > 780 ? '16vh' : '6vh'}`,
-      height: scrolled ? '6vh' : '20vh',
+      height: scrolled ? '6.5vh' : '20vh',
       top: 0,
       zIndex: 20,
       transition: { duration: 1 ,ease: "circOut" }
@@ -34,12 +34,12 @@ export default function Landing() {
         >
           OMASKLEIDERSCHRANK
         </motion.h2>
-        <h1 className="font-afacad text-amber-950 text-[2vh] md:-translate-y-[3vh] w-[80%] md:w-[30%] text-center">
+        <h1 className="font-montserrat text-amber-950 text-[2vh] md:-translate-y-[3vh] w-[80%] md:w-[30%] text-center">
           {t('landing.title').toUpperCase()}
         </h1>
         <NavLink
           to="/productlist"
-          className="absolute z-10 flex justify-center items-center top-[50vh] md:w-[12vw] w-[100px] h-[4vh] uppercase font-afacad text-amber-950 font-bold bg-[#DFBC9E] opacity-100 rounded-md imgBoxShadow"
+          className="absolute z-10 flex justify-center items-center top-[50vh] md:w-[12vw] p-2 h-[4vh] uppercase font-montserrat text-amber-950 font-bold bg-[#DFBC9E] opacity-100 rounded-md imgBoxShadow"
         >
           {t('landing.button')}
         </NavLink>

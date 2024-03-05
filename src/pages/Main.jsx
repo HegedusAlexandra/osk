@@ -9,7 +9,7 @@ import Footer from "./Footer";
 
 export default function Main() {
   return (
-    <div className=" w-[100%] h-[500vh] bg-transparent">
+    <div className=" w-[100%] bg-transparent">
       <Landing />
       <TopPics />
       <Brands />
