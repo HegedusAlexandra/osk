@@ -27,7 +27,7 @@ export const HU = {
                 author: "Bruno 35 éves",
             },
             5:{
-                desc: "Super extrém és máshol nem kapható farmerok cipők pólók kabátok nagy választéka. Tündér lányokkal nem csak punkoknak! :) Érdemes felkeresni..",
+                desc: "Super extrém és máshol nem kapható farmerok cipők pólók kabátok nagy választéka. Tündér lányokkal :) Érdemes felkeresni..",
                 author: "Thomas 28 éves",
             },
         },
