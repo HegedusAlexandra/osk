@@ -40,7 +40,7 @@ export default function Footer() {
           <input
             name="email"
             placeholder="email"
-            className="border-b-[2px] w-[50vw] border-solid border-white"
+            className="border-b-[2px] w-[50vw] md:w-[20vw] border-solid border-white"
           />
           <button
             className="text-black bg-white rounded-sm md:w-[10vw] w-[50vw] h-[4vh] text-center uppercase"
