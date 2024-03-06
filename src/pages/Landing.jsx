@@ -22,6 +22,7 @@ export default function Landing() {
       height: scrolled ? "6.5vh" : "10vh",
       marginTop: scrolled ? '0vh' : '8vh',
       zIndex: scrolled ? 20 : 10,
+      top: scrolled ? '0vh' : '2vh',
       transition: { duration: 1, ease: "circOut" }
     });
   }, [scrolled, controls]);
