@@ -11,7 +11,7 @@ export const variants = {
       transition: { duration: 0.5 ,ease: "easeIn"}
     },
     hiddenMenu: {
-      y: "-100vh",
+      y: "-10vh",
       opacity: 0
     },
     visibleMenu: {
@@ -22,7 +22,7 @@ export const variants = {
       }
     },
     hideMenu: {
-      y:"-100vh",
+      y:"-10vh",
       opacity: 0,
       transition: {
         ease: 'easeOut'

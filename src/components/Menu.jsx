@@ -33,7 +33,7 @@ function Menu({ screen }) {
             };
           }}
         >
-          <span className="material-symbols-outlined">home</span>
+          <span className="material-symbols-outlined text-[30px] md:text-[24px]">home</span>
         </NavLink>
         <NavLink
           className="size-[4vh] flex justify-center items-center rounded-sm"
@@ -46,7 +46,7 @@ function Menu({ screen }) {
             };
           }}
         >
-          <span className="material-symbols-outlined">apparel</span>
+          <span className="material-symbols-outlined text-[30px] md:text-[24px]">apparel</span>
         </NavLink>
         <NavLink
           className="size-[4vh] flex justify-center items-center rounded-sm"
@@ -59,7 +59,7 @@ function Menu({ screen }) {
             };
           }}
         >
-          <span className="material-symbols-outlined">shopping_cart</span>
+          <span className="material-symbols-outlined text-[30px] md:text-[24px]">shopping_cart</span>
         </NavLink>
         <Dropdown/>
       </div>

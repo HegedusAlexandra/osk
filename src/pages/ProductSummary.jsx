@@ -60,8 +60,8 @@ export default function ProductSummary() {
             <ul className="font-montserrat">
               {selectedProducts.map((product) => (
                 <li key={product.id}>
-                  <div className="flex flex-row gap-[1vw]">
-                    <div className="w-[80%] h-[20vh]">
+                  <div className="flex flex-row items-end gap-[1vw]">
+                    <div className="w-[70%] h-[20vh]">
                       <PicCard
                         handleIncrement={handleIncrement}
                         handleDecrement={handleDecrement}
@@ -69,7 +69,8 @@ export default function ProductSummary() {
                         product={product}
                       />
                     </div>
-                    {t('cart.sum')} : {formatCurrency(product.quantity * product.price)}
+                    <p className="flex justify-end text-[2vh] translate-y-[-2vh] w-[30%] border-b-2 border-solid border-black">
+                    {formatCurrency(product.quantity * product.price)}</p>
                   </div>
                 </li>
               ))}
