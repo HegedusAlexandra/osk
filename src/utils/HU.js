@@ -3,7 +3,7 @@ export const HU = {
         currency: "{{value, currency}} Ft",
         landing:{
             title:"Fedezd fel a Rejtett Kincseket Illertissen Szívében: A Te Megbízható Használtruha Butikod",
-            button:'Mutasd a ruhákat'
+            button:'Lássuk!'
         },
         aboutus:{
             introduction:"Szeretnénk egy kis változatosságot a turkálók világában,ezért a termékeink egy nagyobb része Angliából érkezik,így tudjuk a folyamatosan alacsony árakat biztosítani Önöknek.Lepje meg magát az alacsony árakkal és találja meg a legjobb darabokat,kellemes környezetben nálunk a Nagymama Ruhásszekrényében.Nálunk folyamatosan cserélődő teenager-,hölgy- és férfiruha kínálatot talál.A ruhaátvétel nálunk máshogy működik!A ruhák átnézése után azonnal fizetünk,várakozási idő nélkül!(ruhadarabonként 1 euro)" ,

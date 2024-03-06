@@ -20,7 +20,7 @@ export default function Landing() {
         ? "3vh"
         : `${window.innerWidth > 780 ? "16vh" : "6vh"}`,
       height: scrolled ? "6.5vh" : "10vh",
-      marginTop: scrolled ? '0vh' : '10vh',
+      marginTop: scrolled ? '0vh' : '8vh',
       zIndex: scrolled ? 20 : 10,
       transition: { duration: 1, ease: "circOut" }
     });
@@ -36,7 +36,7 @@ export default function Landing() {
         >
           OMASKLEIDERSCHRANK
         </motion.h2>
-        <h1 className="font-montserrat text-amber-950 text-[2vh] md:-translate-y-[3vh] w-[80%] md:w-[30%] text-center">
+        <h1 className="font-montserrat text-amber-950 text-[2vh] md:translate-y-[2vh] w-[80%] md:w-[30%] text-center">
           {t("landing.title").toUpperCase()}
         </h1>
         <NavLink

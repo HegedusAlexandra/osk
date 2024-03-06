@@ -52,7 +52,7 @@ export default function ProductSummary() {
     <div className="w-[100%]">
       {window.innerWidth > 780 ? <Menu screen={"sum"} /> : <MobileMenu />}
       <div className="flex flex-col justify-between items-between w-[100%] px-[1.5vw] font-montserrat">
-        <div className="headline2 md:-translate-x-[0vw] -translate-x-[4vw]">
+        <div className="headline2 md:text-[8vh] text-[5vh] md:-translate-x-[0vw] -translate-x-[4vw]">
           <h2>{t("cart.cart")}</h2>
         </div>
         <div className="m-[1vw]">

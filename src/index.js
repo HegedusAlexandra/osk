@@ -5,34 +5,34 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import App from "./App";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProductSummary from "./pages/ProductSummary";
 import ProductList from "./pages/ProductList";
-import '../src/utils/i18n'
+import "../src/utils/i18n";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const router = createBrowserRouter([
   {
     path: "/osk",
-    element: <App/>,
+    element: <App />
   },
   {
     path: "/sum",
-    element: <ProductSummary/>,
+    element: <ProductSummary />
   },
   {
     path: "/productlist",
-    element: <ProductList/>,
-  },
+    element: <ProductList />
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <RouterProvider router={router} />
-  </Provider>
+  <LanguageProvider>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </LanguageProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

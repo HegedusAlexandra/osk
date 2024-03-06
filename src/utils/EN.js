@@ -3,7 +3,7 @@ export const EN = {
         currency: "{{value, currency}} $",
         landing:{
             title:"Discover Hidden Gems in the Heart of Illertissen: Your Go-To Secondhand Clothing Boutique",
-            button: 'Show the clothes'
+            button: 'Show me!'
         },
         aboutus:{
             introduction:"We want a bit of variety in the world of rummaging, so most of our products come from England, so we can provide you with consistently low prices. Surprise yourself with the low prices and find the best pieces in a pleasant environment in the Grandma's Wardrobe. We have a constantly changing teenager, women and men clothing. The collection of clothes works differently with us! We pay immediately after inspecting the clothes, without waiting time! (1 euro per piece of clothing)",
