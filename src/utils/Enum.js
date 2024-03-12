@@ -7,8 +7,8 @@ const Language = Object.freeze({
 const Sort = Object.freeze({
     ASC: "asc",
     DESC: "desc",
-    SALE: "sale",
-    NEW: 'new'
+    /* SALE: "sale",
+    NEW: 'new' */
   });
 
 const Filter = Object.freeze({

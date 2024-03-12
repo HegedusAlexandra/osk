@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
   decrementQuantity
 } from "../redux/slices/productSlice";
-
+import Filter from './Filter'
 import PicCard from "./PicCard";
 
 const ProductListContainer = () => {
@@ -19,9 +19,12 @@ const ProductListContainer = () => {
     dispatch(decrementQuantity(id));
   };
 
+  const [filteredProducts,setFilteredProducts] = useState(products)
+
   return (
     <div className="flex flex-row justify-between flex-wrap w-[100%] px-[2.5%] py-[2vh]">
-      {products.map((product) => (
+       <Filter filteredProducts={filteredProducts} setFilteredProducts={setFilteredProducts}/>
+      {filteredProducts.map((product) => (
         <div className="w-[49.5%] mt-[1.5%] gap-[1%]">
           <PicCard
             atr={"object-cover object-bottom"}

@@ -1,12 +1,24 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import Dropdown from "react-dropdown";
 import { useLanguage } from "../contexts/LanguageContext";
 import {Sort, Language } from "../utils/Enum";
 
-export default function DropdownComp({type}) {
+export default function DropdownComp({type,filteredProducts,setFilteredProducts}) {
   const {selectedLanguage,setSelectedLanguage} = useLanguage()
   const [selectedSort,setSelectedSort] = useState()
   const options = Object.keys(type === 'Language' ? Language : Sort)
+
+useEffect(() => {
+console.log(selectedSort)
+if(selectedSort === 'DESC'){
+  const sortedProducts = [...filteredProducts].sort((a,b) => b.price-a.price)
+  setFilteredProducts(sortedProducts)
+} else if (selectedSort === 'ASC'){
+  const sortedProducts = [...filteredProducts].sort((a,b) => a.price-b.price)
+  setFilteredProducts(sortedProducts)
+} 
+
+},[filteredProducts, selectedSort, setFilteredProducts])
 
   return (
     <div className="w-[4vh] flex justify-center items-center rounded-sm ">
