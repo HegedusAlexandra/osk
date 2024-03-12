@@ -20,7 +20,7 @@ const ProductListContainer = () => {
   };
 
   return (
-    <div className="flex flex-row justify-between flex-wrap w-[100%] px-[2.5%] py-[10vh]">
+    <div className="flex flex-row justify-between flex-wrap w-[100%] px-[2.5%] py-[2vh]">
       {products.map((product) => (
         <div className="w-[49.5%] mt-[1.5%] gap-[1%]">
           <PicCard

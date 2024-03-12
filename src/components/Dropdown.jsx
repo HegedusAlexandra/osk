@@ -1,17 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import Dropdown from "react-dropdown";
 import { useLanguage } from "../contexts/LanguageContext";
-import { Language } from "../utils/Enum";
+import {Sort, Language } from "../utils/Enum";
 
-export default function DropdownComp() {
+export default function DropdownComp({type}) {
   const {selectedLanguage,setSelectedLanguage} = useLanguage()
-  const options = Object.keys(Language)
-
+  const [selectedSort,setSelectedSort] = useState()
+  const options = Object.keys(type === 'Language' ? Language : Sort)
 
   return (
     <div className="w-[4vh] flex justify-center items-center rounded-sm ">
-      <Dropdown
-        
+      <Dropdown        
         arrowClosed={
           <span className="material-symbols-outlined">arrow_drop_down</span>
         }
@@ -23,10 +22,10 @@ export default function DropdownComp() {
         className=''  */
         menuClassName="absolute text-amber-950 bg-white p-2 pr-6 -translate-x-2 rounded-b-sm"
         controlClassName="flex flex-row "
-        options={options.filter((val) => val !== selectedLanguage)}
-        onChange={(option) => setSelectedLanguage(option.value)}
-        value={selectedLanguage}
-        placeholder="Select an option"
+        options={options.filter((val) => val !== (type === 'Language' ? selectedLanguage : selectedSort))}
+        onChange={(option) => (type === 'Language' ? setSelectedLanguage(option.value) : setSelectedSort(option.value))}
+        value={type === 'Language' ? selectedLanguage : selectedSort}
+        placeholder={type === 'Language' ? "Select an option" : 'ORDER'}
       />
     </div>
   );

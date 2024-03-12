@@ -61,7 +61,7 @@ function Menu({ screen }) {
         >
           <span className="material-symbols-outlined text-[30px] md:text-[24px]">shopping_cart</span>
         </NavLink>
-        <Dropdown/>
+        <Dropdown type={'Language'}/>
       </div>
       
     </div>

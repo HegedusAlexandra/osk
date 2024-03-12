@@ -5,6 +5,7 @@ import Footer from './Footer'
 import MobileMenu from '../components/MobileMenu'
 import OrderButton from '../components/OrderButton'
 import { NavLink } from 'react-router-dom'
+import Filter from '../components/Filter'
 
 export default function ProductList() {
 
@@ -28,11 +29,10 @@ export default function ProductList() {
     };
   }, []);
 
-  console.log(isFooterVisible);
-
   return (
     <div className="absolute z-2 w-[100%] h-[500vh] bg-transparent">
-         {window.innerWidth > 780 ? <Menu screen={"list"} /> : <MobileMenu/>}
+        {window.innerWidth > 780 ? <Menu screen={"list"} /> : <MobileMenu/>}
+        <Filter/>
         <ProductListContainer/>
         <NavLink to='/sum' className={`${isFooterVisible ? 'hidden' : 'bottom-[2vh]'} fixed z-20  right-[3vh]`}><OrderButton/></NavLink>
         <Footer/>

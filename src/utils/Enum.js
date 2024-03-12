@@ -3,6 +3,19 @@ const Language = Object.freeze({
     HU: "hu",
     DE: "de"
   });
+
+const Sort = Object.freeze({
+    ASC: "asc",
+    DESC: "desc",
+    SALE: "sale",
+    NEW: 'new'
+  });
+
+const Filter = Object.freeze({
+    FEMALE: "FEMALE",
+    MALE: "MALE",
+    CHILD: "CHILD"
+});
   
   
-  export { Language };
+export { Language,Sort,Filter };

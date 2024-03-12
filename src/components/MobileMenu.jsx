@@ -94,7 +94,7 @@ export default function MobileMenu() {
         )}
       </div>
       <div className="flex justify-end w-[20%] pr-[5vw]">
-        {isVisible && <DropdownComp />}
+        {isVisible && <DropdownComp type={'Language'}/>}
       </div>
     </div>
   );
