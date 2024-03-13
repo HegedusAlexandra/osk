@@ -14,8 +14,10 @@ export default function FilterWindow() {
   const language = i18n.language;
   const gender = Object.keys(Filter);
   const dispatch = useDispatch()
-  const [value, setValue] = useState([0, 100]);
-
+  const [value, setValue] = useState([
+    parseInt(localStorage.getItem('lowestPrice'), 10) || 0, // Provide a default value if null
+    parseInt(localStorage.getItem('highestPrice'), 10) || 100 // Provide a default value if null
+  ]);
 
   const changeCurr = useCallback(
     (amount) => {
@@ -38,7 +40,7 @@ export default function FilterWindow() {
 
   const submitChange = () => {    
     dispatch(resetFilter())
-    dispatch(filteredProductsByPriceRange([value[0], value[1]]))
+    dispatch(filteredProductsByPriceRange(value))
   };
 
   return (
@@ -60,6 +62,8 @@ export default function FilterWindow() {
         valueLabelFormat={changeCurr}
         getAriaValueText={valuetext}
         onChangeCommitted={submitChange}
+        min={parseInt(localStorage.getItem('lowestPrice'), 10) || 0}
+        max={parseInt(localStorage.getItem('highestPrice'), 10) || 100}
         sx={{
           color: "success.main",
           "& .MuiSlider-thumb": {
