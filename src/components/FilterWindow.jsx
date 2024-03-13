@@ -3,7 +3,7 @@ import { Filter } from "../utils/Enum";
 import Slider from "@mui/material/Slider";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { filteredProductsByPriceRange,filteredProductsByType, resetFilter } from '../redux/slices/productSlice'
+import { filteredProductsByPriceRange,filteredProductsByType,sortedProductsByPriceRange, resetFilter } from '../redux/slices/productSlice'
 
 function valuetext(value) {
   return `${value}`;
@@ -18,6 +18,7 @@ export default function FilterWindow() {
     parseInt(localStorage.getItem('lowestPrice'), 10) || 0, // Provide a default value if null
     parseInt(localStorage.getItem('highestPrice'), 10) || 100 // Provide a default value if null
   ]);
+  const[choosenType,setChoosenType]= useState('')
 
   const changeCurr = useCallback(
     (amount) => {
@@ -40,12 +41,17 @@ export default function FilterWindow() {
 
   const submitChange = () => {    
     dispatch(resetFilter())
+    choosenType !== '' && dispatch(filteredProductsByType(choosenType))
     dispatch(filteredProductsByPriceRange(value))
+    dispatch(sortedProductsByPriceRange('ORDER'));
   };
 
   const handleType = (el) => {    
+    setChoosenType(el)
     dispatch(resetFilter())
+    dispatch(filteredProductsByPriceRange(value))
     dispatch(filteredProductsByType(el))
+    dispatch(sortedProductsByPriceRange('ORDER'));
   };
 
   return (
@@ -54,7 +60,7 @@ export default function FilterWindow() {
         <button
           onClick={() => handleType(el)}
           key={el}
-          className="w-fit bg-transparent px-2 hover:font-semibold font-montserrat"
+          className={`w-fit bg-transparent px-2 hover:font-semibold font-montserrat ${choosenType === el && 'font-bold'}`}
         >
           {el}
         </button>

@@ -2,7 +2,7 @@ import React,{useEffect, useState} from "react";
 import Dropdown from "react-dropdown";
 import { useLanguage } from "../contexts/LanguageContext";
 import {Sort, Language } from "../utils/Enum";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { sortedProductsByPriceRange } from "../redux/slices/productSlice";;
 
 export default function DropdownComp({type}) {
@@ -10,11 +10,14 @@ export default function DropdownComp({type}) {
   const [selectedSort,setSelectedSort] = useState()
   const options = Object.keys(type === 'Language' ? Language : Sort)
   const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.products)
 
   const handleSortChange = (sortOrder) => {
     setSelectedSort(sortOrder)
     dispatch(sortedProductsByPriceRange(sortOrder));
   };
+
+  useEffect(() => setSelectedSort(),[products.length])
 
   return (
     <div className="w-[4vh] flex justify-center items-center rounded-sm ">
