@@ -31,6 +31,12 @@ export const productSlice = createSlice({
         );
       }
     },
+    filteredProductsByType: (state, action) => {
+      const choosenType = action.payload;
+      state.products = [...state.products].filter(
+        (product) => product.type === choosenType
+      );
+    },
     sortedProductsByPriceRange: (state, action) => {
       const sortOrder = action.payload;
       state.products = [...state.products].sort((a, b) => {
@@ -50,6 +56,7 @@ export const {
   decrementQuantity,
   filteredProductsByPriceRange,
   sortedProductsByPriceRange,
+  filteredProductsByType,
   resetFilter 
 } = productSlice.actions;
 

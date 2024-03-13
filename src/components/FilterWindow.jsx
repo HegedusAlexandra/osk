@@ -3,7 +3,7 @@ import { Filter } from "../utils/Enum";
 import Slider from "@mui/material/Slider";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { filteredProductsByPriceRange, resetFilter } from '../redux/slices/productSlice'
+import { filteredProductsByPriceRange,filteredProductsByType, resetFilter } from '../redux/slices/productSlice'
 
 function valuetext(value) {
   return `${value}`;
@@ -43,10 +43,16 @@ export default function FilterWindow() {
     dispatch(filteredProductsByPriceRange(value))
   };
 
+  const handleType = (el) => {    
+    dispatch(resetFilter())
+    dispatch(filteredProductsByType(el))
+  };
+
   return (
     <div className="flex flex-row justify-start items-center gap-[1vw] w-full h-full mr-[1vw]">
       {gender.map((el) => (
         <button
+          onClick={() => handleType(el)}
           key={el}
           className="w-fit bg-transparent px-2 hover:font-semibold font-montserrat"
         >
