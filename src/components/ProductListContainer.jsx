@@ -19,12 +19,10 @@ const ProductListContainer = () => {
     dispatch(decrementQuantity(id));
   };
 
-  const [filteredProducts,setFilteredProducts] = useState(products)
-
   return (
     <div className="flex flex-row justify-between flex-wrap w-[100%] px-[2.5%] py-[2vh]">
-       <Filter filteredProducts={filteredProducts} setFilteredProducts={setFilteredProducts}/>
-      {filteredProducts.map((product) => (
+       <Filter />
+      {products.map((product) => (
         <div className="w-[49.5%] mt-[1.5%] gap-[1%]">
           <PicCard
             atr={"object-cover object-bottom"}
