@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
@@ -19,12 +19,23 @@ const ProductListContainer = () => {
     dispatch(decrementQuantity(id));
   };
 
-  const [filteredProducts,setFilteredProducts] = useState(products)
+  useEffect(() => {
+    // Calculate and save the lowest and highest prices when the component mounts
+    if (products.length > 0) {
+      const prices = products.map(product => product.price);
+      const lowestPrice = Math.min(...prices);
+      const highestPrice = Math.max(...prices);
+
+      // Save to localStorage
+      localStorage.setItem('lowestPrice', lowestPrice.toString());
+      localStorage.setItem('highestPrice', highestPrice.toString());
+    }
+  }, []); 
 
   return (
     <div className="flex flex-row justify-between flex-wrap w-[100%] px-[2.5%] py-[2vh]">
-       <Filter filteredProducts={filteredProducts} setFilteredProducts={setFilteredProducts}/>
-      {filteredProducts.map((product) => (
+       <Filter />
+      {products.map((product) => (
         <div className="w-[49.5%] mt-[1.5%] gap-[1%]">
           <PicCard
             atr={"object-cover object-bottom"}
