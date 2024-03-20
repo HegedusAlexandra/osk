@@ -9,16 +9,17 @@ import {
   sortedProductsByPriceRange,
   resetFilter
 } from "../redux/slices/productSlice";
+import { motion } from "framer-motion";
 
 function valuetext(value) {
   return `${value}`;
 }
 
 export default function FilterWindow() {
-  const { t,i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const language = i18n.language;
   const gender = Object.keys(Filter);
-  const dispatch = useDispatch();  
+  const dispatch = useDispatch();
   const [choosenType, setChoosenType] = useState("");
   const [isFiltered, setIsFiltered] = useState(false);
   const [value, setValue] = useState([
@@ -45,6 +46,11 @@ export default function FilterWindow() {
     setValue(newValue);
   };
 
+  const buttonVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } },
+  };
+
   const submitChange = () => {
     dispatch(resetFilter());
     choosenType !== "" && dispatch(filteredProductsByType(choosenType));
@@ -60,10 +66,20 @@ export default function FilterWindow() {
     dispatch(sortedProductsByPriceRange("ORDER"));
   };
 
+  const clearFilter = () => {
+    setIsFiltered(false);
+    dispatch(resetFilter());
+  };
+
   return (
-    <div className="flex flex-row justify-start items-center gap-[1vw] w-full h-full mr-[1vw]">
+    <div className="flex flex-row justify-start items-center w-full h-full mr-[1vw]">
       {isFiltered ? (
-        <>
+        <motion.div
+              className="flex flex-row flex-1 justify-start items-center gap-[1vw]"
+              initial="hidden"
+              animate="visible"
+              variants={buttonVariants}
+        >
           {gender.map((el) => (
             <button
               onClick={() => handleType(el)}
@@ -97,12 +113,14 @@ export default function FilterWindow() {
           />
           <p>{changeCurr(value[1])}</p>
           <button
-          onClick={() => setIsFiltered(false)}
-          className="w-fit flex flex-row justify-center items-center bg-transparent uppercase"
-        >
-          <span className="material-symbols-outlined text-[2vh] mt-[4px]">close</span>
-        </button>
-        </>
+            onClick={clearFilter}
+            className="w-fit flex flex-row justify-center items-center bg-transparent uppercase"
+          >
+            <span className="material-symbols-outlined text-[2vh] mt-[4px]">
+              close
+            </span>
+          </button>
+        </motion.div>
       ) : (
         <button
           onClick={() => setIsFiltered(true)}
