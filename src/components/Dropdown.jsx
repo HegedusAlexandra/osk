@@ -15,7 +15,7 @@ export default function DropdownComp({type}) {
   const [selectedSort,setSelectedSort] = useState()
   const [selectedSite,setSelectedSite] = useState()
   const [dropdownKey, setDropdownKey] = useState(0);
-  const options = Object.keys(type === 'Language' ? Language : type === 'Footer' ? Sitemap : Sort)
+
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products)
   const navigate = useNavigate();
@@ -43,6 +43,12 @@ export default function DropdownComp({type}) {
       setDropdownKey(prevKey => prevKey + 1);
   }, [scrollY,i18n.language]);
 
+  let options = Object.keys(type === 'Language' ? Language : type === 'Footer' ? Sitemap : Sort)
+  .map((option) => {
+    return { value: option, label: type === "Footer" ? t(`sitemap.${option}`) : option}; // Assuming your translation keys are lowercase
+  });
+  /* .filter((val) => val !== (type === 'Language' ? selectedLanguage : type === 'Footer' ? selectedSite : selectedSort) */ 
+
   return (
     <div className={`w-[4vh] ${type === 'Footer' && 'w-fit ml-[2vh]'} flex justify-center items-center rounded-sm`}>
       <Dropdown 
@@ -55,7 +61,7 @@ export default function DropdownComp({type}) {
         }
         menuClassName="absolute text-amber-950 bg-white p-2 pr-6 -translate-x-2 rounded-b-sm"
         controlClassName="flex flex-row "
-        options={options.filter((val) => val !== (type === 'Language' ? selectedLanguage : type === 'Footer' ? selectedSite : selectedSort))}
+        options={options}
         onChange={(option) => (type === 'Language' ? setSelectedLanguage(option.value) : type === 'Footer' ? handleSiteChange(option.value) : handleSortChange(option.value))}
         value={type === 'Language' ? selectedLanguage : type === 'Footer' ? selectedSite : selectedSort}
         placeholder={type === 'Language' ? "Select an option" : type === 'Footer' ? t("footer.sitemap").toUpperCase() : 'ORDER'}
