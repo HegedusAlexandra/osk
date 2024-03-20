@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import { Filter } from "../utils/Enum";
 import Slider from "@mui/material/Slider";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { filteredProductsByPriceRange,filteredProductsByType,sortedProductsByPriceRange, resetFilter } from '../redux/slices/productSlice'
 
 function valuetext(value) {
@@ -19,6 +19,7 @@ export default function FilterWindow() {
     parseInt(localStorage.getItem('highestPrice'), 10) || 100 // Provide a default value if null
   ]);
   const[choosenType,setChoosenType]= useState('')
+  const {t} = useTranslation()
 
   const changeCurr = useCallback(
     (amount) => {
@@ -62,7 +63,7 @@ export default function FilterWindow() {
           key={el}
           className={`w-fit bg-transparent px-2 hover:font-semibold font-montserrat ${choosenType === el && 'font-bold'}`}
         >
-          {el}
+          {t(`filter.${el}`)}
         </button>
       ))}
       <p>{changeCurr(value[0])}</p>

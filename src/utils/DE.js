@@ -6,9 +6,6 @@ export const DE = {
             CART: "Warenkorb",
             ASC:"Aufsteigend",
             DESC:'Absteigend',
-            FEMALE: 'FRAU',
-            MALE: 'MANN',
-            CHILD: 'KIND'
         },
         currency: "{{value, currency}} €",
         landing:{
@@ -86,6 +83,11 @@ export const DE = {
             selection: "unserer Auswahl.",
             sum: "Gesamtsumme",
             buy: "Ich bestelle es"
-        }       
+        },
+        filter:{            
+            FEMALE: 'FRAU',
+            MALE: 'MANN',
+            CHILD: 'KIND'
+        }           
     }
 }

@@ -6,9 +6,6 @@ export const HU = {
             CART: 'Kosár',
             ASC:"Növekvő",
             DESC:'Csökkenő',
-            FEMALE: 'NŐI',
-            MALE: 'FÉRFI',
-            CHILD: 'GYEREK'
         },
         currency: "{{value, currency}} Ft",
         landing:{
@@ -86,6 +83,11 @@ export const HU = {
             selection: "választékunkból.",
             sum: "összesen",
             buy: "Megrendelem"
+        },
+        filter:{
+            FEMALE: 'NŐI',
+            MALE: 'FÉRFI',
+            CHILD: 'GYEREK'
         }              
     }
 }
