@@ -85,6 +85,7 @@ export const EN = {
             buy:'I want it'
         },
         filter:{
+            name:'filter',
             FEMALE: 'FEMALE',
             MALE: 'MALE',
             CHILD: 'CHILD'

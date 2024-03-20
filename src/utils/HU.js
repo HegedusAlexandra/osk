@@ -85,6 +85,7 @@ export const HU = {
             buy: "Megrendelem"
         },
         filter:{
+            name:'szűrés',
             FEMALE: 'NŐI',
             MALE: 'FÉRFI',
             CHILD: 'GYEREK'

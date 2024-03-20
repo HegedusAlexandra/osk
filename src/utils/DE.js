@@ -84,7 +84,8 @@ export const DE = {
             sum: "Gesamtsumme",
             buy: "Ich bestelle es"
         },
-        filter:{            
+        filter:{     
+            name:'filter',       
             FEMALE: 'FRAU',
             MALE: 'MANN',
             CHILD: 'KIND'
