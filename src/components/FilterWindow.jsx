@@ -9,7 +9,6 @@ import {
   sortedProductsByPriceRange,
   resetFilter
 } from "../redux/slices/productSlice";
-import { useScrollPosition } from "../hooks/scrollY";
 
 function valuetext(value) {
   return `${value}`;
@@ -17,7 +16,6 @@ function valuetext(value) {
 
 export default function FilterWindow() {
   const { t,i18n } = useTranslation();
-  const scrollY = useScrollPosition()
   const language = i18n.language;
   const gender = Object.keys(Filter);
   const dispatch = useDispatch();  
@@ -61,8 +59,6 @@ export default function FilterWindow() {
     dispatch(filteredProductsByType(el));
     dispatch(sortedProductsByPriceRange("ORDER"));
   };
-
-  useEffect ( () => setIsFiltered(false),[scrollY])
 
   return (
     <div className="flex flex-row justify-start items-center gap-[1vw] w-full h-full mr-[1vw]">
