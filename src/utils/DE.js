@@ -1,5 +1,10 @@
 export const DE = {
     translation:{
+        sitemap:{
+            HOME: "Startseite",
+            PRODUCTS: "Produkte",
+            CART: "Warenkorb"
+        },
         currency: "{{value, currency}} €",
         landing:{
             title:"Entdecke Verborgene Schätze im Herzen von Illertissen: Deine Anlaufstelle für Secondhand-Bekleidungsgeschäfte",

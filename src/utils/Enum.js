@@ -11,6 +11,12 @@ const Sort = Object.freeze({
     NEW: 'new' */
   });
 
+const Sitemap = Object.freeze({
+    HOME: "osk",
+    PRODUCTS: "productlist",
+    CART:'sum'
+  });
+
 const Filter = Object.freeze({
     FEMALE: "FEMALE",
     MALE: "MALE",
@@ -18,4 +24,4 @@ const Filter = Object.freeze({
 });
   
   
-export { Language,Sort,Filter };
+export { Language,Sort,Filter,Sitemap };

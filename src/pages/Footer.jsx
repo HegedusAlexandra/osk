@@ -3,6 +3,7 @@ import facebook from "../assets/svg/facebook.svg";
 import twitter from "../assets/svg/twitter.svg";
 import instagram from "../assets/svg/instagram.svg";
 import { useTranslation } from "react-i18next";
+import DropdownComp from "../components/Dropdown";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -11,8 +12,8 @@ export default function Footer() {
     <div id='footer' className="flex flex-col items-center justify-center w-[100%] h-[100vh] bg-black overflow-hidden">
       <div className="flex md:flex-row flex-col justify-center md:items-end md:py-[8vh] pt-[16vh] w-[100%] h-[80vh] md:px-[6%] gap-[4vh] md:gap-[0vh]">
         <div className="flex flex-col items-start justify-between flex-1 md:h-[40vh] h-[30vh] md:py-[10vh] text-[#afafaf]">
-          <div className="flex flex-row md:ml-[2vh]">
-            <p className="ml-[2vh]">{t("footer.sitemap").toUpperCase()}</p>
+          <div className="flex flex-row justify-center items-center md:ml-[2vh]">
+            <DropdownComp type={'Footer'}/>
           </div>
           <div className="flex flex-row items-center flex-1 md:ml-[4vh] ml-[2vh] gap-[2vh]">
             <img

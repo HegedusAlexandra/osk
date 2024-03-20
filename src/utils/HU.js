@@ -1,5 +1,10 @@
 export const HU = {    
     translation: {
+        sitemap:{
+            HOME: 'Főoldal',
+            PRODUCTS: 'Termékek',
+            CART: 'Kosár'
+        },
         currency: "{{value, currency}} Ft",
         landing:{
             title:"Fedezd fel a Rejtett Kincseket Illertissen Szívében: A Te Megbízható Használtruha Butikod",

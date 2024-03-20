@@ -9,7 +9,7 @@ import Footer from "./Footer";
 
 export default function Main() {
   return (
-    <div className=" w-[100%] bg-transparent">
+    <div className=" w-[100%] bg-gradient-to-b from-transparent to-30% to-amber-50">
       <Landing />
       <TopPics />
       <Brands />

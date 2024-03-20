@@ -1,6 +1,5 @@
 import "./App.css";
 import Menu from "./components/Menu";
-import Clouds from "./components/Clouds";
 import Main from "./pages/Main";
 import MobileMenu from "./components/MobileMenu";
 

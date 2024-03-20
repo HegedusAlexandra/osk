@@ -1,5 +1,10 @@
 export const EN = {    
     translation: {
+        sitemap:{
+            HOME: 'Home',
+            PRODUCTS: 'Products',
+            CART: 'Cart'
+        },
         currency: "{{value, currency}} $",
         landing:{
             title:"Discover Hidden Gems in the Heart of Illertissen: Your Go-To Secondhand Clothing Boutique",
