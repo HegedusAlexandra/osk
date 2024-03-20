@@ -1,9 +1,14 @@
 export const HU = {    
     translation: {
-        sitemap:{
+        dropdown:{
             HOME: 'Főoldal',
             PRODUCTS: 'Termékek',
-            CART: 'Kosár'
+            CART: 'Kosár',
+            ASC:"Növekvő",
+            DESC:'Csökkenő',
+            FEMALE: 'NŐI',
+            MALE: 'FÉRFI',
+            CHILD: 'GYEREK'
         },
         currency: "{{value, currency}} Ft",
         landing:{
@@ -71,6 +76,7 @@ export const HU = {
         },
         footer:{
             sitemap:'oldaltérkép',
+            order:'rendezés',
             signup: "Iratkozzon fel most, hogy naprakész információkat kaphasson legfrissebb kampányainkról és kizárólagos frissítéseinkről.",
             submit:'feliratkozom'
         },

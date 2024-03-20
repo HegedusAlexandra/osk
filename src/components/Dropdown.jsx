@@ -45,9 +45,9 @@ export default function DropdownComp({type}) {
 
   let options = Object.keys(type === 'Language' ? Language : type === 'Footer' ? Sitemap : Sort)
   .map((option) => {
-    return { value: option, label: type === "Footer" ? t(`sitemap.${option}`) : option}; // Assuming your translation keys are lowercase
+    return { value: option, label: type !== "Language" ? t(`dropdown.${option}`) : option};
   });
-  /* .filter((val) => val !== (type === 'Language' ? selectedLanguage : type === 'Footer' ? selectedSite : selectedSort) */ 
+
 
   return (
     <div className={`w-[4vh] ${type === 'Footer' && 'w-fit ml-[2vh]'} flex justify-center items-center rounded-sm`}>
@@ -64,7 +64,7 @@ export default function DropdownComp({type}) {
         options={options}
         onChange={(option) => (type === 'Language' ? setSelectedLanguage(option.value) : type === 'Footer' ? handleSiteChange(option.value) : handleSortChange(option.value))}
         value={type === 'Language' ? selectedLanguage : type === 'Footer' ? selectedSite : selectedSort}
-        placeholder={type === 'Language' ? "Select an option" : type === 'Footer' ? t("footer.sitemap").toUpperCase() : 'ORDER'}
+        placeholder={type === 'Language' ? "Select an option" : type === 'Footer' ? t("footer.sitemap").toUpperCase() : t("footer.order").toUpperCase()}
       />
     </div>
   );

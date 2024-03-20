@@ -1,9 +1,14 @@
 export const DE = {
     translation:{
-        sitemap:{
+        dropdown:{
             HOME: "Startseite",
             PRODUCTS: "Produkte",
-            CART: "Warenkorb"
+            CART: "Warenkorb",
+            ASC:"Aufsteigend",
+            DESC:'Absteigend',
+            FEMALE: 'FRAU',
+            MALE: 'MANN',
+            CHILD: 'KIND'
         },
         currency: "{{value, currency}} €",
         landing:{
@@ -71,6 +76,7 @@ export const DE = {
         },
         footer:{
             sitemap:'Seitenübersicht',
+            order:'sortierung',
             signup: "Melden Sie sich jetzt an, um aktuelle Kampagnen und exklusive Neuigkeiten zu erhalten.",
             submit:'ich melde mich an'
         },

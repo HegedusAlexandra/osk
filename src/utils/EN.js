@@ -1,9 +1,14 @@
 export const EN = {    
     translation: {
-        sitemap:{
+        dropdown:{
             HOME: 'Home',
             PRODUCTS: 'Products',
-            CART: 'Cart'
+            CART: 'Cart',
+            ASC:"Ascending",
+            DESC:'Descending',
+            FEMALE: 'FEMALE',
+            MALE: 'MALE',
+            CHILD: 'CHILD'
         },
         currency: "{{value, currency}} $",
         landing:{
@@ -71,6 +76,7 @@ export const EN = {
         },
         footer:{
             sitemap:'sitemap',
+            order:'order',
             signup:'Register now to stay in the loop with our latest campaigns and exclusive updates.',
             submit:'submit'
         },
