@@ -12,7 +12,7 @@ function Menu({ screen }) {
         scrolled && "bg-white"
       }`}
     >
-      <div className="font-bebas bg-white px-[2px]">OMA'S</div>
+      <div className="font-bebas px-[2px] pt-[2px] rounded-sm bg-[#DFBC9E]">OMA'S</div>
       {screen !== "home" && (
         <NavLink
           className="absolute flex justify-center items-center font-bebas text-[3vh] translate-x-[88vh]"
