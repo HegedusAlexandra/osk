@@ -48,7 +48,7 @@ export default function FilterWindow() {
 
   const buttonVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1 } },
+    visible: { opacity: 1, transition: { duration: 1 } }
   };
 
   const submitChange = () => {
@@ -68,18 +68,19 @@ export default function FilterWindow() {
 
   const clearFilter = () => {
     setIsFiltered(false);
-    dispatch(resetFilter());
+    window.innerWidth > 780 && dispatch(resetFilter());
   };
 
   return (
-    <div className="flex flex-row justify-start items-center w-full h-full mr-[1vw]">
+    <div className="flex flex-row justify-start md:items-center items-start md:w-full w-[100%] md:h-full h-[4vh] md:mr-[1vw]">
       {isFiltered ? (
         <motion.div
-              className="flex flex-row flex-1 justify-start items-center gap-[1vw]"
-              initial="hidden"
-              animate="visible"
-              variants={buttonVariants}
+          className="flex md:flex-row flex-col md:flex-1 w-[95%] md:static absolute md:bg-transparent bg-white justify-start items-center gap-[1vw] md:pb-[0vh] pb-[10vh] rounded-3xl md:rounded-none"
+          initial="hidden"
+          animate="visible"
+          variants={buttonVariants}
         >
+          <div className="flex flex-row md:gap-[2vw] gap-[10vw] md:py-[0vh] py-[4vh]">
           {gender.map((el) => (
             <button
               onClick={() => handleType(el)}
@@ -90,33 +91,35 @@ export default function FilterWindow() {
             >
               {t(`filter.${el}`)}
             </button>
-          ))}
-          <p>{changeCurr(value[0])}</p>
-          <Slider
-            getAriaLabel={() => "price range"}
-            value={value}
-            onChange={handleChange}
-            valueLabelDisplay="auto"
-            valueLabelFormat={changeCurr}
-            getAriaValueText={valuetext}
-            onChangeCommitted={submitChange}
-            min={parseInt(localStorage.getItem("lowestPrice"), 10) || 0}
-            max={parseInt(localStorage.getItem("highestPrice"), 10) || 100}
-            sx={{
-              color: "success.main",
-              "& .MuiSlider-thumb": {
-                borderRadius: "5px",
-                width: "10px",
-                height: "10px"
-              }
-            }}
-          />
-          <p>{changeCurr(value[1])}</p>
+          ))}</div>
+          <div className="flex flex-row items-center md:flex-1 w-[100%] md:gap-[1vw] gap-[3vw] md:p-0 px-[14vw]">
+            <p className="w-fit">{changeCurr(value[0])}</p>
+            <Slider
+              getAriaLabel={() => "price range"}
+              value={value}
+              onChange={handleChange}
+              valueLabelDisplay="auto"
+              valueLabelFormat={changeCurr}
+              getAriaValueText={valuetext}
+              onChangeCommitted={submitChange}
+              min={parseInt(localStorage.getItem("lowestPrice"), 10) || 0}
+              max={parseInt(localStorage.getItem("highestPrice"), 10) || 100}
+              sx={{
+                color: "success.main",
+                "& .MuiSlider-thumb": {
+                  borderRadius: "5px",
+                  width: "10px",
+                  height: "10px"
+                }
+              }}
+            />
+            <p className="w-fit">{changeCurr(value[1])}</p>
+          </div>
           <button
             onClick={clearFilter}
             className="w-fit flex flex-row justify-center items-center bg-transparent uppercase"
           >
-            <span className="material-symbols-outlined text-[2vh] mt-[4px]">
+            <span className="material-symbols-outlined text-[2vh] md:mt-[4px] mt-[10vh]">
               close
             </span>
           </button>
@@ -124,7 +127,7 @@ export default function FilterWindow() {
       ) : (
         <button
           onClick={() => setIsFiltered(true)}
-          className="w-fit flex flex-row  bg-transparent uppercase"
+          className="w-fit flex flex-row bg-transparent uppercase"
         >
           {t("filter.name")}
           <span className="material-symbols-outlined">arrow_right</span>
