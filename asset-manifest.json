@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/osk/static/css/main.c61635c5.css",
-    "main.js": "/osk/static/js/main.73c4f64a.js",
+    "main.css": "/osk/static/css/main.c8773eaa.css",
+    "main.js": "/osk/static/js/main.886a0929.js",
     "static/js/453.96fe6aca.chunk.js": "/osk/static/js/453.96fe6aca.chunk.js",
     "static/media/c (18).jpg": "/osk/static/media/c (18).cd28cd73eccd5186996c.jpg",
     "static/media/25.png": "/osk/static/media/25.9c5157f6b834ca61e02b.png",
@@ -61,12 +61,12 @@
     "index.html": "/osk/index.html",
     "static/media/twitter.svg": "/osk/static/media/twitter.9ec67aff99fd436e60c5ae015e9d0ed5.svg",
     "static/media/facebook.svg": "/osk/static/media/facebook.7b970ce00e3ade9b33d4e2941ac36c5c.svg",
-    "main.c61635c5.css.map": "/osk/static/css/main.c61635c5.css.map",
-    "main.73c4f64a.js.map": "/osk/static/js/main.73c4f64a.js.map",
+    "main.c8773eaa.css.map": "/osk/static/css/main.c8773eaa.css.map",
+    "main.886a0929.js.map": "/osk/static/js/main.886a0929.js.map",
     "453.96fe6aca.chunk.js.map": "/osk/static/js/453.96fe6aca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c61635c5.css",
-    "static/js/main.73c4f64a.js"
+    "static/css/main.c8773eaa.css",
+    "static/js/main.886a0929.js"
   ]
 }
