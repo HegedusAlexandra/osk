@@ -10,9 +10,14 @@ export const productSlice = createSlice({
       const product = state.products.find(
         (product) => product.id === id
       );
+      const filteredProduct = state.filteredProducts.find(
+        (product) => product.id === id
+      );
       if (product && product.store[size] > 0) {
         product.store[size] -= 1;
         product.quantity[size] += 1 
+        filteredProduct.store[size] -= 1;
+        filteredProduct.quantity[size] += 1 
       }
     },
     decrementQuantity: (state, action) => {
