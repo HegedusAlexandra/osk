@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { Filter } from "../utils/Enum";
 import Slider from "@mui/material/Slider";
 import { useTranslation } from "react-i18next";
@@ -7,7 +7,7 @@ import {
   filteredProductsByPriceRange,
   filteredProductsByType,
   sortedProductsByPriceRange,
-  resetFilter
+  resetFilteredProducts
 } from "../redux/slices/productSlice";
 import { motion } from "framer-motion";
 
@@ -52,7 +52,7 @@ export default function FilterWindow() {
   };
 
   const submitChange = () => {
-    dispatch(resetFilter());
+    dispatch(resetFilteredProducts());
     choosenType !== "" && dispatch(filteredProductsByType(choosenType));
     dispatch(filteredProductsByPriceRange(value));
     dispatch(sortedProductsByPriceRange("ORDER"));
@@ -60,7 +60,7 @@ export default function FilterWindow() {
 
   const handleType = (el) => {
     setChoosenType(el);
-    dispatch(resetFilter());
+    dispatch(resetFilteredProducts());
     dispatch(filteredProductsByPriceRange(value));
     dispatch(filteredProductsByType(el));
     dispatch(sortedProductsByPriceRange("ORDER"));
@@ -68,7 +68,7 @@ export default function FilterWindow() {
 
   const clearFilter = () => {
     setIsFiltered(false);
-    window.innerWidth > 780 && dispatch(resetFilter());
+    window.innerWidth > 780 &&  dispatch(resetFilteredProducts());;
   };
 
   return (

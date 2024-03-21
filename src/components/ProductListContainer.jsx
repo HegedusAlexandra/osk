@@ -7,7 +7,7 @@ import Filter from './Filter'
 import PicCard from "./PicCard";
 
 const ProductListContainer = () => {
-  const products = useSelector((state) => state.products.products);
+  const products = useSelector((state) => state.products.filteredProducts);
   const dispatch = useDispatch();
 
   const handleIncrement = (id,size) => {

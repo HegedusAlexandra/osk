@@ -16,7 +16,7 @@ export default function DropdownComp({ type }) {
   const [dropdownKey, setDropdownKey] = useState(0);
 
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.products);
+  const products = useSelector((state) => state.products.filteredProducts);
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const scrollY = useScrollPosition();

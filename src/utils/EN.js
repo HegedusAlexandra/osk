@@ -86,9 +86,10 @@ export const EN = {
         },
         filter:{
             name:'filter',
-            FEMALE: 'FEMALE',
-            MALE: 'MALE',
-            CHILD: 'CHILD'
+            FEMALE: 'WOMEN',
+            MALE: 'MAN',
+            CHILD: 'CHILD',
+            NEW:'NEW'
         },
         sold:'sold out'       
     }

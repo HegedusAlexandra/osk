@@ -88,7 +88,8 @@ export const DE = {
             name:'filter',       
             FEMALE: 'FRAU',
             MALE: 'MANN',
-            CHILD: 'KIND'
+            CHILD: 'KIND',
+            NEW:'NEU'
         },
         sold:'ausverkauft'           
     }

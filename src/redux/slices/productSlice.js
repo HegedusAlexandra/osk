@@ -7,9 +7,6 @@ export const productSlice = createSlice({
   reducers: {
     incrementQuantity: (state, action) => {
       const { id, size } = action.payload;
-      console.log('====================================');
-      console.log(action);
-      console.log('***********************************');
       const product = state.products.find(
         (product) => product.id === id
       );
@@ -30,20 +27,20 @@ export const productSlice = createSlice({
     filteredProductsByPriceRange: (state, action) => {
       const [minPrice, maxPrice] = action.payload;
       if (minPrice !== null && maxPrice !== null) {
-        state.products = [...state.products].filter(
+        state.filteredProducts = [...state.products].filter(
           (product) => product.price >= minPrice && product.price <= maxPrice
         );
       }
     },
     filteredProductsByType: (state, action) => {
       const choosenType = action.payload;
-      state.products = [...state.products].filter(
+      state.filteredProducts = [...state.products].filter(
         (product) => product.type === choosenType
       );
     },
     sortedProductsByPriceRange: (state, action) => {
       const sortOrder = action.payload;
-      state.products = [...state.products].sort((a, b) => {
+      state.filteredProducts = [...state.products].sort((a, b) => {
         if (sortOrder === 'ASC') return a.price - b.price;
         else if (sortOrder === 'DESC') return b.price - a.price;
         return 0;
@@ -51,7 +48,10 @@ export const productSlice = createSlice({
     },
     resetFilter: () => {
       return initialState;
-    } 
+    },
+    resetFilteredProducts: (state) => {
+      state.filteredProducts = state.products;
+    },
   }
 });
 
@@ -61,7 +61,8 @@ export const {
   filteredProductsByPriceRange,
   sortedProductsByPriceRange,
   filteredProductsByType,
-  resetFilter 
+  resetFilter ,
+  resetFilteredProducts
 } = productSlice.actions;
 
 export default productSlice.reducer;

@@ -2,7 +2,7 @@ import React, { memo ,useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import { useScrollNotTop } from "../hooks/scrollY";
 import Dropdown from "../components/Dropdown";
-import { useSelector } from "react-redux";
+import {  useDispatch, useSelector } from "react-redux";
 import { motion,useAnimation } from "framer-motion";
 
 function Menu({ screen }) {
@@ -10,18 +10,18 @@ function Menu({ screen }) {
   const controls = useAnimation();
   const products = useSelector((state) => state.products.products);
   const selectedProductsNumber = products
-    .map((el) => Object.values(el.quantity).reduce((b, a) => b + a))
-    .reduce((b, a) => b + a);
+    .map((el) => Object.values(el.quantity).reduce((b, a) => b + a , 0))
+    .reduce((b, a) => b + a , 0);
 
-    useEffect(() => {
-      // Function to start the blink animation
-      const startBlink = async () => {
-        await controls.start({ opacity: 0.2, scale: 1.6 ,y:0, transition: { duration: 0.5 } });
-        await controls.start({ opacity: 1,scale: 0.9 ,y:-12, transition: { duration: 0.5 } });
-      };
-  
-      startBlink(); // Start the blinking effect when the component mounts or selectedProductsNumber changes
-    }, [selectedProductsNumber, controls]);
+  useEffect(() => {
+    // Function to start the blink animation
+    const startBlink = async () => {
+      await controls.start({ opacity: 0.2, scale: 1.6 ,y:0, transition: { duration: 0.5 } });
+      await controls.start({ opacity: 1,scale: 0.9 ,y:-12, transition: { duration: 0.5 } });
+    };
+
+    startBlink(); // Start the blinking effect when the component mounts or selectedProductsNumber changes
+  }, [selectedProductsNumber, controls]);
 
   return (
     <div
@@ -34,6 +34,7 @@ function Menu({ screen }) {
       </div>
       {screen !== "home" && (
         <NavLink
+        
           className="absolute flex justify-center items-center font-bebas text-[3vh] translate-x-[88vh]"
           to="/osk"
         >

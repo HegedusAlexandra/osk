@@ -6,11 +6,14 @@ import { motion, useAnimation } from "framer-motion";
 import { useScrollNotTop } from "../hooks/scrollY";
 import Cloud from "../components/Cloud";
 import { useTranslation } from "react-i18next";
+import { resetFilteredProducts } from "../redux/slices/productSlice";
+import { useDispatch } from "react-redux";
 
 export default function Landing() {
   const controls = useAnimation();
   const scrolled = useScrollNotTop();
   const { t } = useTranslation();
+  const dispatch = useDispatch()
 
   useEffect(() => {
     controls.start({
@@ -41,6 +44,7 @@ export default function Landing() {
           {t("landing.title").toUpperCase()}
         </h1>
         <NavLink
+          onClick={() => dispatch(resetFilteredProducts())}
           to="/productlist"
           className="absolute z-10 flex justify-center items-center top-[50vh] md:w-[12vw] p-2 h-[4vh] uppercase font-montserrat text-amber-950 font-bold bg-[#DFBC9E] opacity-100 rounded-md imgBoxShadow"
         >
