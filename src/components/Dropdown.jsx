@@ -7,7 +7,6 @@ import { sortedProductsByPriceRange } from "../redux/slices/productSlice";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useScrollPosition } from "../hooks/scrollY";
-import i18next from "i18next";
 
 export default function DropdownComp({ type }) {
   const { selectedLanguage, setSelectedLanguage } = useLanguage();

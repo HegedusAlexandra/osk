@@ -8,7 +8,7 @@ export default function Filter() {
     <div className='flex justify-start items-start w-[50%] h-[4vh]'>
         <FilterWindow />
     </div>
-    <div className='flex justify-end items-center w-[50%] h-[4vh]'>
+    <div className=' flex justify-end items-center w-[50%] h-[4vh]'>
         <Dropdown type={'sort'} />
     </div>
     </div>
