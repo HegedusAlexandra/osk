@@ -55,15 +55,13 @@ export default function FilterWindow() {
     dispatch(resetFilteredProducts());
     choosenType !== "" && dispatch(filteredProductsByType(choosenType));
     dispatch(filteredProductsByPriceRange(value));
-    dispatch(sortedProductsByPriceRange("ORDER"));
   };
 
   const handleType = (el) => {
     setChoosenType(el);
     dispatch(resetFilteredProducts());
     dispatch(filteredProductsByPriceRange(value));
-    dispatch(filteredProductsByType(el));
-    dispatch(sortedProductsByPriceRange("ORDER"));
+    dispatch(filteredProductsByType(el));   
   };
 
   const clearFilter = () => {

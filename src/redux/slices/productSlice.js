@@ -32,8 +32,8 @@ export const productSlice = createSlice({
         );
       }
     },
-    filteredProductsByType: (state, action) => {
-      const choosenType = action.payload;
+    filteredProductsByType: (state, action) => {      
+      const choosenType = action.payload;console.log(choosenType);
       state.filteredProducts = [...state.products].filter(
         (product) => product.type === choosenType
       );
