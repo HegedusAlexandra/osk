@@ -10,7 +10,7 @@ export const productSlice = createSlice({
       const product = state.products.find(
         (product) => product.id === id
       );
-      if (product) {
+      if (product && product.store[size] > 0) {
         product.store[size] -= 1;
         product.quantity[size] += 1 
       }
@@ -27,20 +27,20 @@ export const productSlice = createSlice({
     filteredProductsByPriceRange: (state, action) => {
       const [minPrice, maxPrice] = action.payload;
       if (minPrice !== null && maxPrice !== null) {
-        state.filteredProducts = [...state.products].filter(
+        state.filteredProducts = [...state.filteredProducts].filter(
           (product) => product.price >= minPrice && product.price <= maxPrice
         );
       }
     },
     filteredProductsByType: (state, action) => {      
       const choosenType = action.payload;console.log(choosenType);
-      state.filteredProducts = [...state.products].filter(
+      state.filteredProducts = [...state.filteredProducts].filter(
         (product) => product.type === choosenType
       );
     },
     sortedProductsByPriceRange: (state, action) => {
       const sortOrder = action.payload;
-      state.filteredProducts = [...state.products].sort((a, b) => {
+      state.filteredProducts = [...state.filteredProducts].sort((a, b) => {
         if (sortOrder === 'ASC') return a.price - b.price;
         else if (sortOrder === 'DESC') return b.price - a.price;
         return 0;

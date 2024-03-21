@@ -26,10 +26,6 @@ const ProductListContainer = () => {
     }
   }, [products]);
 
-  console.log('====================================');
-  console.log(filteredProducts);
-  console.log('====================================');
-
   const filteredProductList = useMemo(() => filteredProducts.map((product) => (
     <div className="w-[49.5%] mt-[1.5%] gap-[1%]">
       <PicCard
