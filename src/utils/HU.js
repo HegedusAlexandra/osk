@@ -89,6 +89,7 @@ export const HU = {
             FEMALE: 'NŐI',
             MALE: 'FÉRFI',
             CHILD: 'GYEREK'
-        }              
+        },
+        sold:'elfogyott'              
     }
 }

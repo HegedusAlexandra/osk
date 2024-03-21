@@ -89,6 +89,7 @@ export const DE = {
             FEMALE: 'FRAU',
             MALE: 'MANN',
             CHILD: 'KIND'
-        }           
+        },
+        sold:'ausverkauft'           
     }
 }

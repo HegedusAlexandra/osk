@@ -1,8 +1,7 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
-  decrementQuantity
 } from "../redux/slices/productSlice";
 import Filter from './Filter'
 import PicCard from "./PicCard";
@@ -11,13 +10,10 @@ const ProductListContainer = () => {
   const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
 
-  const handleIncrement = (id) => {
-    dispatch(incrementQuantity(id));
+  const handleIncrement = (id,size) => {
+    dispatch(incrementQuantity({id,size}));
   };
 
-  const handleDecrement = (id) => {
-    dispatch(decrementQuantity(id));
-  };
 
   useEffect(() => {
     // Calculate and save the lowest and highest prices when the component mounts
@@ -39,9 +35,9 @@ const ProductListContainer = () => {
         <div className="w-[49.5%] mt-[1.5%] gap-[1%]">
           <PicCard
             atr={"object-cover object-bottom"}
-            product={product}
-            handleDecrement={handleDecrement}
+            product={product}            
             handleIncrement={handleIncrement}
+            screen={'list'}
           />
         </div>
       ))}

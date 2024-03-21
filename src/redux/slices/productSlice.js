@@ -6,12 +6,16 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     incrementQuantity: (state, action) => {
+      const { id, size } = action.payload;
+      console.log('====================================');
+      console.log(action);
+      console.log('***********************************');
       const product = state.products.find(
-        (product) => product.id === action.payload
+        (product) => product.id === id
       );
-      if (product && product.store > 0) {
-        product.quantity += 1;
-        product.store -= 1;
+      if (product) {
+        product.store[size] -= 1;
+        product.quantity[size] += 1 
       }
     },
     decrementQuantity: (state, action) => {
