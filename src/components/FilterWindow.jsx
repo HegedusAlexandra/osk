@@ -6,10 +6,10 @@ import { useDispatch } from "react-redux";
 import {
   filteredProductsByPriceRange,
   filteredProductsByType,
-  sortedProductsByPriceRange,
   resetFilteredProducts
 } from "../redux/slices/productSlice";
 import { motion } from "framer-motion";
+import RadioButtons from "./RadioButtons";
 
 function valuetext(value) {
   return `${value}`;
@@ -90,7 +90,7 @@ export default function FilterWindow() {
               {t(`filter.${el}`)}
             </button>
           ))}</div>
-          <div className="flex flex-row items-center md:flex-1 w-[100%] md:gap-[1vw] gap-[3vw] md:p-0 px-[14vw]">
+          <div className="flex flex-row items-center md:flex-1 w-[100%] md:gap-[1vw] gap-[3vw] md:px-[6vh] px-[14vw]">
             <p className="w-fit">{changeCurr(value[0])}</p>
             <Slider
               getAriaLabel={() => "price range"}
@@ -113,6 +113,9 @@ export default function FilterWindow() {
             />
             <p className="w-fit">{changeCurr(value[1])}</p>
           </div>
+          
+            <RadioButtons/>
+          
           <button
             onClick={clearFilter}
             className="w-fit flex flex-row justify-center items-center bg-transparent uppercase"
