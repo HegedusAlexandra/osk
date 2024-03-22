@@ -4,12 +4,35 @@ import { variants } from "../utils/animations";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   filteredProductsByType,
   resetFilteredProducts
 } from "../redux/slices/productSlice";
-import { isNil } from "lodash"; 
+
+const buttonVariants = {
+  lowerHover: {
+    opacity:1,
+    transition: { type: 'spring', stiffness: 100 },
+  },
+  middleHover: {
+    y:0,
+    transition: { type: 'spring', stiffness: 100 },
+  },
+  upperHover: {
+    opacity: 1,
+    transition: { type: 'spring', stiffness: 100 },
+  },
+  lowerInitial: {
+    opacity:0,
+  },
+  middleInitial: {
+    y:'4vh',
+  },
+  upperInitial: {
+    opacity:0,
+  },
+};
 
 export default function PicCard({
   name,
@@ -26,8 +49,11 @@ export default function PicCard({
   const language = i18n.language;
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [hoveredButton, setHoveredButton] = useState(null);
-  const notFilteredProducts = useSelector((state) => state.products.products);
+  const [hoveredButton, setHoveredButton] = useState(false);
+
+  const upperButtonAnimation = useAnimation();
+  const lowerButtonAnimation = useAnimation();
+  const middleButtonAnimation = useAnimation();
 
   const changeCurr = useCallback(
     (amount) => {
@@ -48,7 +74,16 @@ export default function PicCard({
     if (inView) {
       controls.start("visibleCard");
     }
-  }, [controls, inView]);
+    if (hoveredButton) {
+      upperButtonAnimation.start("upperHover");
+      middleButtonAnimation.start('middleHover');
+      lowerButtonAnimation.start("lowerHover");
+    } else {
+      upperButtonAnimation.start("upperInitial");
+      middleButtonAnimation.start("middleInitial");
+      lowerButtonAnimation.start("lowerInitial");
+    }
+  }, [controls, hoveredButton, inView, lowerButtonAnimation, upperButtonAnimation]);
 
   const formatCurrency = (amount) => {
     return i18n.t("currency", { value: changeCurr(amount) });
@@ -127,31 +162,38 @@ export default function PicCard({
                         (_, index) => {
                           const buttonId = `${el}-${index}`; // Unique ID for each button
                           return (
-                            <div key={el + index} className="flex flex-col">
-                              <button
+                            <div onMouseEnter={() => setHoveredButton(true)} onMouseLeave={() => setHoveredButton(false)} key={el + index} className="flex flex-col">
+                              <motion.button
+                                initial="initial"
+                                animate={upperButtonAnimation}
+                                variants={buttonVariants}
                                 className="flex justify-center h-fit items-center bg-[#DFBC9E] w-[5vh] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
                                 onClick={() => handleIncrement(product.id, el)}
                               >
                                 <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px] mt-[10vh]">
                                   add
                                 </span>
-                              </button>
-                              <button
+                              </motion.button>
+                              <motion.button
+                                initial="initial"
+                                animate={middleButtonAnimation}
+                                variants={buttonVariants}
                                 key={buttonId}
-                                onMouseEnter={() => setHoveredButton(buttonId)}
-                                onMouseLeave={() => setHoveredButton(null)}
                                 className="flex justify-center w-[5vh] h-fit items-center bg-[#DFBC9E] rounded-sm p-[1vh] py-[0.5vh]"
                               >
                                 {el.toUpperCase()}
-                              </button>
-                              <button
+                              </motion.button>
+                              <motion.button
+                                initial="initial"
+                                animate={lowerButtonAnimation}
+                                variants={buttonVariants}
                                 className="flex justify-center h-fit items-center bg-[#DFBC9E] w-[5vh] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
                                 onClick={() => handleDecrement(product.id, el)}
                               >
                                 <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px] mt-[10vh]">
                                   close
                                 </span>
-                              </button>
+                              </motion.button>
                             </div>
                           );
                         }

@@ -79,8 +79,8 @@ export const HU = {
         },
         cart:{
             cart: "kosár",
-            empty: "A kosara jelenleg üres, kérem válasszon valami kellemeset a ",
-            selection: "választékunkból.",
+            empty: "A kosara jelenleg üres, kérem válasszon valamit a ",
+            selection: "kínálatunkból.",
             sum: "összesen",
             buy: "Megrendelem"
         },
