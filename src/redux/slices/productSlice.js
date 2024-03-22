@@ -44,9 +44,15 @@ export const productSlice = createSlice({
       }
     },
     filteredProductsByType: (state, action) => {      
-      const choosenType = action.payload;console.log(choosenType);
+      const choosenType = action.payload;
       state.filteredProducts = [...state.filteredProducts].filter(
         (product) => product.type === choosenType
+      );
+    },
+    filteredProductsBySize: (state, action) => {      
+      const choosenType = action.payload;console.log(choosenType);
+      state.filteredProducts = [...state.filteredProducts].filter(
+        (product) => product.store[choosenType] > 0
       );
     },
     sortedProductsByPriceRange: (state, action) => {
@@ -71,6 +77,7 @@ export const {
   decrementQuantity,
   filteredProductsByPriceRange,
   sortedProductsByPriceRange,
+  filteredProductsBySize,
   filteredProductsByType,
   resetFilter ,
   resetFilteredProducts

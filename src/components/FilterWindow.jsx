@@ -6,10 +6,12 @@ import { useDispatch } from "react-redux";
 import {
   filteredProductsByPriceRange,
   filteredProductsByType,
+  filteredProductsBySize,
   resetFilteredProducts
 } from "../redux/slices/productSlice";
 import { motion } from "framer-motion";
 import RadioButtons from "./RadioButtons";
+import { isEmpty } from "lodash";
 
 function valuetext(value) {
   return `${value}`;
@@ -21,6 +23,7 @@ export default function FilterWindow() {
   const gender = Object.keys(Filter);
   const dispatch = useDispatch();
   const [choosenType, setChoosenType] = useState("");
+  const [choosenSize, setChoosenSize] = useState("");
   const [isFiltered, setIsFiltered] = useState(false);
   const [value, setValue] = useState([
     parseInt(localStorage.getItem("lowestPrice"), 10) || 0, // Provide a default value if null
@@ -53,7 +56,8 @@ export default function FilterWindow() {
 
   const submitChange = () => {
     dispatch(resetFilteredProducts());
-    choosenType !== "" && dispatch(filteredProductsByType(choosenType));
+    !isEmpty(choosenSize) && dispatch(filteredProductsBySize(choosenSize));
+    !isEmpty(choosenType) && dispatch(filteredProductsByType(choosenType));
     dispatch(filteredProductsByPriceRange(value));
   };
 
@@ -61,12 +65,21 @@ export default function FilterWindow() {
     setChoosenType(el);
     dispatch(resetFilteredProducts());
     dispatch(filteredProductsByPriceRange(value));
-    dispatch(filteredProductsByType(el));   
+    !isEmpty(choosenSize) && dispatch(filteredProductsBySize(choosenSize));
+    !isEmpty(choosenType) && dispatch(filteredProductsByType(choosenType));
+  };
+
+  const handleSizeFilter = (event) => {
+    setChoosenSize(event.target.value);
+    dispatch(resetFilteredProducts());   
+    dispatch(filteredProductsByPriceRange(value));    
+    !isEmpty(choosenType) && dispatch(filteredProductsByType(choosenType));
+    !isEmpty(choosenSize) && dispatch(filteredProductsBySize(choosenSize));
   };
 
   const clearFilter = () => {
     setIsFiltered(false);
-    window.innerWidth > 780 &&  dispatch(resetFilteredProducts());;
+    window.innerWidth > 780 && dispatch(resetFilteredProducts());
   };
 
   return (
@@ -79,17 +92,18 @@ export default function FilterWindow() {
           variants={buttonVariants}
         >
           <div className="flex flex-row md:gap-[2vw] gap-[10vw] md:py-[0vh] py-[4vh]">
-          {gender.map((el) => (
-            <button
-              onClick={() => handleType(el)}
-              key={el}
-              className={`w-fit bg-transparent px-2 hover:font-semibold font-montserrat ${
-                choosenType === el && "font-bold"
-              }`}
-            >
-              {t(`filter.${el}`)}
-            </button>
-          ))}</div>
+            {gender.map((el) => (
+              <button
+                onClick={() => handleType(el)}
+                key={el}
+                className={`w-fit bg-transparent px-2 hover:font-semibold font-montserrat ${
+                  choosenType === el && "font-bold"
+                }`}
+              >
+                {t(`filter.${el}`)}
+              </button>
+            ))}
+          </div>
           <div className="flex flex-row items-center md:flex-1 w-[100%] md:gap-[1vw] gap-[3vw] md:px-[6vh] px-[14vw]">
             <p className="w-fit">{changeCurr(value[0])}</p>
             <Slider
@@ -113,9 +127,10 @@ export default function FilterWindow() {
             />
             <p className="w-fit">{changeCurr(value[1])}</p>
           </div>
-          
-            <RadioButtons/>
-          
+          <RadioButtons
+            handleChange={handleSizeFilter}
+            choosenSize={choosenSize}
+          />
           <button
             onClick={clearFilter}
             className="w-fit flex flex-row justify-center items-center bg-transparent uppercase"
