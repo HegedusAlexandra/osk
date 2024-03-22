@@ -21,12 +21,13 @@ export default function ProductSummary() {
   const { t, i18n } = useTranslation();
   const language = i18n.language;
   const dispatch = useDispatch();
-  const handleIncrement = (id) => {
-    dispatch(incrementQuantity(id));
+
+  const handleIncrement = (id, size) => {
+    dispatch(incrementQuantity({ id, size }));
   };
 
-  const handleDecrement = (id) => {
-    dispatch(decrementQuantity(id));
+  const handleDecrement = (id,size) => {
+    dispatch(decrementQuantity({id,size}));
   };
 
   const changeCurr = useCallback(

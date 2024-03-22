@@ -21,12 +21,18 @@ export const productSlice = createSlice({
       }
     },
     decrementQuantity: (state, action) => {
+      const { id, size } = action.payload;
       const product = state.products.find(
-        (product) => product.id === action.payload
+        (product) => product.id === id
       );
-      if (product && product.quantity > 0) {
-        product.quantity -= 1;
-        product.store += 1;
+      const filteredProduct = state.filteredProducts.find(
+        (product) => product.id === id
+      );
+      if (product) {
+        product.store[size] += 1;
+        product.quantity[size] -= 1 
+        filteredProduct.store[size] += 1;
+        filteredProduct.quantity[size] -= 1 
       }
     },
     filteredProductsByPriceRange: (state, action) => {

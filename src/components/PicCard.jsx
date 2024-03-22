@@ -1,14 +1,15 @@
-import React, { useCallback, useEffect,useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { variants } from "../utils/animations";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   filteredProductsByType,
   resetFilteredProducts
 } from "../redux/slices/productSlice";
+import { isNil } from "lodash"; 
 
 export default function PicCard({
   name,
@@ -16,6 +17,7 @@ export default function PicCard({
   atr,
   product,
   handleIncrement,
+  handleDecrement,
   screen
 }) {
   const controls = useAnimation();
@@ -59,10 +61,6 @@ export default function PicCard({
     window.scrollTo(0, 0);
   };
 
-  const handleDelete = (el,id) => {
-    // delete it
-  }
-
   return (
     <motion.div
       ref={ref}
@@ -99,14 +97,14 @@ export default function PicCard({
                   </h2>
                   <div className="flex justify-center items-center flex-row pr-[2vh] gap-[1vh] py-[2vh] md:py-0">
                     {Object.keys(product.store).filter(
-                      (el) => product.store[el] > 0 
+                      (el) => product.store[el] > 0
                     ).length > 0 ? (
                       Object.keys(product.store)
                         .filter((el) => product.store[el] > 0)
                         .map((el) => (
                           <button
                             key={el}
-                            className="flex justify-center w-fit h-fit items-center bg-orange-500 rounded-sm p-[1vh]"
+                            className="flex justify-center w-fit h-fit items-center bg-[#DFBC9E] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
                             onClick={() => handleIncrement(product.id, el)}
                           >
                             {el.toUpperCase()}
@@ -120,38 +118,53 @@ export default function PicCard({
                   </div>
                 </>
               ) : (
-                <div className="flex justify-center items-center flex-row pr-[2vh] gap-[1vh] py-[2vh] md:py-0">
-                {Object.keys(product.quantity)
-                  .filter((el) => product.quantity[el] > 0)
-                  .flatMap((el) =>
-                    Array.from({ length: product.quantity[el] }, (_, index) => {
-                      const buttonId = `${el}-${index}`; // Unique ID for each button
-                      return (
-                        <button
-                          key={buttonId}
-                          onMouseEnter={() => setHoveredButton(buttonId)}
-                          onMouseLeave={() => setHoveredButton(null)}
-                          className="flex justify-center w-fit h-fit items-center bg-[#DFBC9E] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
-                          onClick={() =>
-                            screen === 'cart' ? handleDelete(product.id, el) : handleIncrement(product.id, el)
-                          }
-                        >
-                          {hoveredButton === buttonId ? (
-                            <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px] mt-[10vh]">
-                            close
-                          </span>
-                          ) : (
-                            el.toUpperCase() // Default button text
-                          )}
-                        </button>
-                      );
-                    })
-                  )}
-              </div>
+                <div className="flex justify-center items-center flex-row gap-[1vh] py-[2vh] md:py-0">
+                  {Object.keys(product.quantity)
+                    .filter((el) => product.quantity[el] > 0)
+                    .flatMap((el) =>
+                      Array.from(
+                        { length: product.quantity[el] },
+                        (_, index) => {
+                          const buttonId = `${el}-${index}`; // Unique ID for each button
+                          return (
+                            <div key={el + index} className="flex flex-col">
+                              <button
+                                className="flex justify-center h-fit items-center bg-[#DFBC9E] w-[5vh] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
+                                onClick={() => handleIncrement(product.id, el)}
+                              >
+                                <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px] mt-[10vh]">
+                                  add
+                                </span>
+                              </button>
+                              <button
+                                key={buttonId}
+                                onMouseEnter={() => setHoveredButton(buttonId)}
+                                onMouseLeave={() => setHoveredButton(null)}
+                                className="flex justify-center w-[5vh] h-fit items-center bg-[#DFBC9E] rounded-sm p-[1vh] py-[0.5vh]"
+                              >
+                                {el.toUpperCase()}
+                              </button>
+                              <button
+                                className="flex justify-center h-fit items-center bg-[#DFBC9E] w-[5vh] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
+                                onClick={() => handleDecrement(product.id, el)}
+                              >
+                                <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px] mt-[10vh]">
+                                  close
+                                </span>
+                              </button>
+                            </div>
+                          );
+                        }
+                      )
+                    )}
+                </div>
               )}
             </>
           ) : (
-            <h2 onClick={screen === 'main' && handleLinkFilter} className="text-[8vh] h-[70vh] w-[100%] flex justify-center items-center">
+            <h2
+              onClick={screen === "main" && handleLinkFilter}
+              className="text-[8vh] h-[70vh] w-[100%] flex justify-center items-center"
+            >
               {t(`filter.${name}`)}
             </h2>
           )}
