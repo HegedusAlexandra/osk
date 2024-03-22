@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/osk/static/css/main.e28182d2.css",
-    "main.js": "/osk/static/js/main.0ab671a7.js",
+    "main.js": "/osk/static/js/main.a5d5cbfa.js",
     "static/js/453.96fe6aca.chunk.js": "/osk/static/js/453.96fe6aca.chunk.js",
     "static/media/c (18).jpg": "/osk/static/media/c (18).cd28cd73eccd5186996c.jpg",
     "static/media/25.png": "/osk/static/media/25.9c5157f6b834ca61e02b.png",
@@ -62,11 +62,11 @@
     "static/media/twitter.svg": "/osk/static/media/twitter.9ec67aff99fd436e60c5ae015e9d0ed5.svg",
     "static/media/facebook.svg": "/osk/static/media/facebook.7b970ce00e3ade9b33d4e2941ac36c5c.svg",
     "main.e28182d2.css.map": "/osk/static/css/main.e28182d2.css.map",
-    "main.0ab671a7.js.map": "/osk/static/js/main.0ab671a7.js.map",
+    "main.a5d5cbfa.js.map": "/osk/static/js/main.a5d5cbfa.js.map",
     "453.96fe6aca.chunk.js.map": "/osk/static/js/453.96fe6aca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e28182d2.css",
-    "static/js/main.0ab671a7.js"
+    "static/js/main.a5d5cbfa.js"
   ]
 }
