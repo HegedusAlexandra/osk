@@ -41,7 +41,7 @@ const ProductListContainer = () => {
 
   return (
     <div className="flex flex-row justify-between flex-wrap w-[100%] px-[2.5%] py-[2vh]">
-      <div className="reltive z-10 w-[100%]">
+      <div className="relative z-10 w-[100%]">
         <Filter />
       </div>
       {filteredProductList.length > 0 ? filteredProductList : <h2 className="text-red-500 font-bold text-[4vh] my-[10vh]">{t('filter.search_on')}</h2>}

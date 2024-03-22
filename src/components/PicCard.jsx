@@ -12,26 +12,26 @@ import {
 
 const buttonVariants = {
   lowerHover: {
-    opacity:1,
-    transition: { type: 'spring', stiffness: 100 },
+    opacity: 1,
+    transition: { type: "spring", stiffness: 100 }
   },
   middleHover: {
-    y:0,
-    transition: { type: 'spring', stiffness: 100 },
+    y: 0,
+    transition: { type: "spring", stiffness: 100 }
   },
   upperHover: {
     opacity: 1,
-    transition: { type: 'spring', stiffness: 100 },
+    transition: { type: "spring", stiffness: 100 }
   },
   lowerInitial: {
-    opacity:0,
+    opacity: 0
   },
   middleInitial: {
-    y:'4vh',
+    y: "4vh"
   },
   upperInitial: {
-    opacity:0,
-  },
+    opacity: 0
+  }
 };
 
 export default function PicCard({
@@ -76,14 +76,20 @@ export default function PicCard({
     }
     if (hoveredButton) {
       upperButtonAnimation.start("upperHover");
-      middleButtonAnimation.start('middleHover');
+      middleButtonAnimation.start("middleHover");
       lowerButtonAnimation.start("lowerHover");
     } else {
       upperButtonAnimation.start("upperInitial");
       middleButtonAnimation.start("middleInitial");
       lowerButtonAnimation.start("lowerInitial");
     }
-  }, [controls, hoveredButton, inView, lowerButtonAnimation, upperButtonAnimation]);
+  }, [
+    controls,
+    hoveredButton,
+    inView,
+    lowerButtonAnimation,
+    upperButtonAnimation
+  ]);
 
   const formatCurrency = (amount) => {
     return i18n.t("currency", { value: changeCurr(amount) });
@@ -113,13 +119,19 @@ export default function PicCard({
       />
       {(product || screen === "main") && (
         <motion.div
-          initial={screen !== "cart" ? { opacity: 0 } : { opacity: 1 }}
+          initial={
+            (screen === "cart"  || (screen === 'list' && window.innerWidth < 780))
+              ? { opacity: 1 }
+              : { opacity: 0 }
+          }
           whileHover={{ opacity: 1 }}
-          className={`${
-            screen === "cart"
+          className={` flex justify-between font-montserrat text-black absolute md:w-[48%] w-[48vw] text-[2vh]  bg-white/80 rounded-sm ${
+            (screen === "cart" && window.innerWidth < 780)
+              ? "h-[18vh] flex-col -translate-y-[18vh] p-[1vh] items-end"
+              : screen === "cart" 
               ? "md:h-[18vh] -translate-y-[18vh] p-[4vh] pb-[1vh] items-end"
               : "md:h-[70vh] -translate-y-[70vh] md:p-[20vh] flex-col items-center"
-          } flex justify-between font-montserrat text-black absolute md:w-[48%] w-[48vw] md:text-[2vh] bg-white/80 rounded-sm `}
+          }`}
           key={product?.id || src}
         >
           {product ? (
@@ -130,7 +142,7 @@ export default function PicCard({
                   <h2 className="text-[2vh]">
                     {formatCurrency(Math.trunc(product.price))}
                   </h2>
-                  <div className="flex justify-center items-center flex-row pr-[2vh] gap-[1vh] py-[2vh] md:py-0">
+                  <div className="flex flex-wrap justify-center items-center flex-row md:pr-[2vh] gap-[1vh] py-[1vh] md:py-0">
                     {Object.keys(product.store).filter(
                       (el) => product.store[el] > 0
                     ).length > 0 ? (
@@ -139,21 +151,21 @@ export default function PicCard({
                         .map((el) => (
                           <button
                             key={el}
-                            className="flex justify-center w-fit h-fit items-center bg-[#DFBC9E] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
+                            className="flex justify-center w-fit h-fit items-center bg-[#DFBC9E] hover:bg-red-600 focus:bg-lime-800 rounded-sm p-[1vh] py-[0.5vh]"
                             onClick={() => handleIncrement(product.id, el)}
                           >
                             {el.toUpperCase()}
                           </button>
                         ))
                     ) : (
-                      <span className="text-red-500 font-bold text-[4vh]">
+                      <span className="text-red-500 font-bold md:text-[4vh] text-[2.8vh]">
                         {t("sold")}
                       </span>
                     )}
                   </div>
                 </>
               ) : (
-                <div className="flex justify-center items-center flex-row gap-[1vh] py-[2vh] md:py-0">
+                <div className={`flex justify-center items-center flex-row gap-[1vh] py-[2vh] md:py-0 ${(screen === "cart" && window.innerWidth < 780) && 'h-[16vh]'}`}>
                   {Object.keys(product.quantity)
                     .filter((el) => product.quantity[el] > 0)
                     .flatMap((el) =>
@@ -162,7 +174,12 @@ export default function PicCard({
                         (_, index) => {
                           const buttonId = `${el}-${index}`; // Unique ID for each button
                           return (
-                            <div onMouseEnter={() => setHoveredButton(true)} onMouseLeave={() => setHoveredButton(false)} key={el + index} className="flex flex-col">
+                            <div
+                              onMouseEnter={() => setHoveredButton(true)}
+                              onMouseLeave={() => setHoveredButton(false)}
+                              key={el + index}
+                              className="flex flex-col"
+                            >
                               <motion.button
                                 initial="initial"
                                 animate={upperButtonAnimation}
@@ -170,11 +187,12 @@ export default function PicCard({
                                 className="flex justify-center h-fit items-center bg-[#DFBC9E] w-[5vh] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
                                 onClick={() => handleIncrement(product.id, el)}
                               >
-                                <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px] mt-[10vh]">
+                                <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px]">
                                   add
                                 </span>
                               </motion.button>
                               <motion.button
+                              onClick={() => setHoveredButton(!hoveredButton)}
                                 initial="initial"
                                 animate={middleButtonAnimation}
                                 variants={buttonVariants}
@@ -190,7 +208,7 @@ export default function PicCard({
                                 className="flex justify-center h-fit items-center bg-[#DFBC9E] w-[5vh] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
                                 onClick={() => handleDecrement(product.id, el)}
                               >
-                                <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px] mt-[10vh]">
+                                <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px]">
                                   close
                                 </span>
                               </motion.button>

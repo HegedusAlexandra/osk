@@ -66,7 +66,7 @@ export default function FilterWindow() {
     dispatch(resetFilteredProducts());
     dispatch(filteredProductsByPriceRange(value));
     !isEmpty(choosenSize) && dispatch(filteredProductsBySize(choosenSize));
-    !isEmpty(choosenType) && dispatch(filteredProductsByType(choosenType));
+    dispatch(filteredProductsByType(el));
   };
 
   const handleSizeFilter = (event) => {
@@ -74,7 +74,7 @@ export default function FilterWindow() {
     dispatch(resetFilteredProducts());   
     dispatch(filteredProductsByPriceRange(value));    
     !isEmpty(choosenType) && dispatch(filteredProductsByType(choosenType));
-    !isEmpty(choosenSize) && dispatch(filteredProductsBySize(choosenSize));
+    dispatch(filteredProductsBySize(event));
   };
 
   const clearFilter = () => {
@@ -86,12 +86,12 @@ export default function FilterWindow() {
     <div className="flex flex-row justify-start md:items-center items-start md:w-full w-[100%] md:h-full h-[4vh] md:mr-[1vw]">
       {isFiltered ? (
         <motion.div
-          className="flex md:flex-row flex-col md:flex-1 w-[95%] md:static absolute md:bg-transparent bg-white justify-start items-center gap-[1vw] md:pb-[0vh] pb-[10vh] rounded-3xl md:rounded-none"
+          className="flex md:flex-row flex-col md:flex-1 w-[100.5%] md:static absolute md:bg-transparent bg-white justify-start items-center gap-[1vw] md:pb-[0vh] md:pt-[0vh] py-[10vh] rounded-3xl md:rounded-none"
           initial="hidden"
           animate="visible"
           variants={buttonVariants}
         >
-          <div className="flex flex-row md:gap-[2vw] gap-[10vw] md:py-[0vh] py-[4vh]">
+          <div className="flex flex-row md:gap-[2vw] gap-[10vw] md:py-[0vh] pt-[4vh]">
             {gender.map((el) => (
               <button
                 onClick={() => handleType(el)}
@@ -104,7 +104,7 @@ export default function FilterWindow() {
               </button>
             ))}
           </div>
-          <div className="flex flex-row items-center md:flex-1 w-[100%] md:gap-[1vw] gap-[3vw] md:px-[6vh] px-[14vw]">
+          <div className="flex flex-row items-center md:flex-1 w-[100%] md:gap-[1vw] gap-[3vw] md:px-[6vh] px-[12vw] md:pt-[0vh] pt-[4vh]">
             <p className="w-fit">{changeCurr(value[0])}</p>
             <Slider
               getAriaLabel={() => "price range"}
@@ -131,11 +131,17 @@ export default function FilterWindow() {
             handleChange={handleSizeFilter}
             choosenSize={choosenSize}
           />
+          {window.innerWidth < 780 && <button
+            onClick={() => dispatch(resetFilteredProducts())}
+            className="w-fit flex flex-row justify-center items-center bg-transparent uppercase hover:text-red-500 md:pt-[0vh] pt-[6vh]"
+          >
+            feltételek törlése
+          </button>}
           <button
             onClick={clearFilter}
-            className="w-fit flex flex-row justify-center items-center bg-transparent uppercase"
+            className="w-fit flex flex-row justify-center items-center bg-transparent uppercase md:pt-[0vh] pt-[4vh]"
           >
-            <span className="material-symbols-outlined text-[2vh] md:mt-[4px] mt-[10vh]">
+            <span className="material-symbols-outlined text-[2vh] md:mt-[4px] mt-[6vh]">
               close
             </span>
           </button>

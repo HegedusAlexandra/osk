@@ -73,10 +73,9 @@ export default function ProductSummary() {
                       />
                     </div>
                     <p className="flex justify-end text-[2vh] translate-y-[-2vh] w-[30%] border-b-2 border-solid border-black">
-                      {formatCurrency(
-                        Object.values(product.quantity).reduce(
+                      {formatCurrency(Math.trunc( Object.values(product.quantity).reduce(
                           (a, b) => a + b
-                        ) * product.price
+                        ) * product.price)
                       )}
                     </p>
                   </div>
