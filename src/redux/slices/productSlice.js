@@ -50,7 +50,7 @@ export const productSlice = createSlice({
       );
     },
     filteredProductsBySize: (state, action) => {      
-      const choosenType = action.payload;console.log(choosenType);
+      const choosenType = action.payload;
       state.filteredProducts = [...state.filteredProducts].filter(
         (product) => product.store[choosenType] > 0
       );
