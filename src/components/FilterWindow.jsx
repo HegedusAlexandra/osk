@@ -74,12 +74,17 @@ export default function FilterWindow() {
     dispatch(resetFilteredProducts());   
     dispatch(filteredProductsByPriceRange(value));    
     !isEmpty(choosenType) && dispatch(filteredProductsByType(choosenType));
-    dispatch(filteredProductsBySize(event));
+    dispatch(filteredProductsBySize(event.target.value));
   };
 
   const clearFilter = () => {
     setIsFiltered(false);
     window.innerWidth > 780 && dispatch(resetFilteredProducts());
+  };
+
+  const cleanFilter = () => {
+    setIsFiltered(false);
+    dispatch(resetFilteredProducts());
   };
 
   return (
@@ -132,10 +137,10 @@ export default function FilterWindow() {
             choosenSize={choosenSize}
           />
           {window.innerWidth < 780 && <button
-            onClick={() => dispatch(resetFilteredProducts())}
+            onClick={cleanFilter}
             className="w-fit flex flex-row justify-center items-center bg-transparent uppercase hover:text-red-500 md:pt-[0vh] pt-[6vh]"
           >
-            feltételek törlése
+            {t('filter.delete_filter')}
           </button>}
           <button
             onClick={clearFilter}

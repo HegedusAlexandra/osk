@@ -85,6 +85,7 @@ export const DE = {
             buy: "Ich bestelle es"
         },
         filter:{   
+            delete_filter: 'filter löschen',
             search_on:"Bitte werfen Sie auch einen Blick auf unsere anderen Produkte, da wir leider keine Produkte finden konnten, die Ihren Suchkriterien entsprechen, oder kommen Sie später wieder.",  
             name:'filter',       
             FEMALE: 'FRAU',
