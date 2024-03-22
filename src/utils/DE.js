@@ -84,7 +84,8 @@ export const DE = {
             sum: "Gesamtsumme",
             buy: "Ich bestelle es"
         },
-        filter:{     
+        filter:{   
+            search_on:"Bitte werfen Sie auch einen Blick auf unsere anderen Produkte, da wir leider keine Produkte finden konnten, die Ihren Suchkriterien entsprechen, oder kommen Sie später wieder.",  
             name:'filter',       
             FEMALE: 'FRAU',
             MALE: 'MANN',

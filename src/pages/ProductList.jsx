@@ -36,7 +36,7 @@ export default function ProductList() {
         to="/sum"
         className={`${
           isFooterVisible ? "hidden" : "bottom-[2vh]"
-        } fixed z-20  right-[3vh]`}
+        } fixed z-20  right-[5vh]`}
       >
         <OrderButton />
       </NavLink>

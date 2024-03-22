@@ -3,11 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity } from "../redux/slices/productSlice";
 import Filter from "./Filter";
 import PicCard from "./PicCard";
+import { useTranslation } from "react-i18next";
 
 const ProductListContainer = () => {
   const products = useSelector((state) => state.products.products);
   const filteredProducts = useSelector((state) => state.products.filteredProducts);
   const dispatch = useDispatch();
+  const {t} =useTranslation()
 
   const handleIncrement = (id, size) => {
     dispatch(incrementQuantity({ id, size }));
@@ -27,7 +29,7 @@ const ProductListContainer = () => {
   }, [products]);
 
   const filteredProductList = useMemo(() => filteredProducts.map((product) => (
-    <div className="w-[49.5%] mt-[1.5%] gap-[1%]">
+    <div key={product.id} className="w-[49.5%] mt-[1.5%] gap-[1%]">
       <PicCard
         atr={"object-cover object-bottom"}
         product={product}
@@ -42,7 +44,7 @@ const ProductListContainer = () => {
       <div className="reltive z-10 w-[100%]">
         <Filter />
       </div>
-      {filteredProductList}
+      {filteredProductList.length > 0 ? filteredProductList : <h2 className="text-red-500 font-bold text-[4vh] my-[10vh]">{t('filter.search_on')}</h2>}
     </div>
   );
 };

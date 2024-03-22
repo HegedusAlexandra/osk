@@ -85,6 +85,7 @@ export const HU = {
             buy: "Megrendelem"
         },
         filter:{
+            search_on:'Kérjük, vessen egy pillantást többi termékünkre is, mivel sajnos nem sikerült a keresési feltételeknek megfelelő termékeket találnunk, vagy térjen vissza később.',
             name:'szűrés',
             FEMALE: 'NŐI',
             MALE: 'FÉRFI',

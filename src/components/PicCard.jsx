@@ -131,13 +131,13 @@ export default function PicCard({
                           key={buttonId}
                           onMouseEnter={() => setHoveredButton(buttonId)}
                           onMouseLeave={() => setHoveredButton(null)}
-                          className="flex justify-center w-fit h-fit items-center bg-orange-500 hover:bg-red-600 rounded-sm p-[1vh]"
+                          className="flex justify-center w-fit h-fit items-center bg-[#DFBC9E] hover:bg-red-600 rounded-sm p-[1vh] py-[0.5vh]"
                           onClick={() =>
                             screen === 'cart' ? handleDelete(product.id, el) : handleIncrement(product.id, el)
                           }
                         >
                           {hoveredButton === buttonId ? (
-                            <span className="material-symbols-outlined text-[2vh] md:mt-[4px] mt-[10vh]">
+                            <span className="material-symbols-outlined text-[2.5vh] md:mt-[4px] mt-[10vh]">
                             close
                           </span>
                           ) : (
@@ -151,7 +151,7 @@ export default function PicCard({
               )}
             </>
           ) : (
-            <h2 onClick={handleLinkFilter} className="text-[8vh]">
+            <h2 onClick={screen === 'main' && handleLinkFilter} className="text-[8vh] h-[70vh] w-[100%] flex justify-center items-center">
               {t(`filter.${name}`)}
             </h2>
           )}

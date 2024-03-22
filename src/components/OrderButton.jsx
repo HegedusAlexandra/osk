@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 export default function OrderButton() {
   const { t } = useTranslation();
   return (
-    <button className="bg-orange-500 md:w-[14vw] w-[33vw] h-[4vh] md:h-[8vh] self-end mb-[2vh] rounded-sm text-white md:text-[3vh] font-semibold">
+    <button className="uppercase bg-orange-500 hover:bg-orange-700 md:w-fit w-[33vw] h-[4vh] md:h-fit self-end mb-[2vh] md:p-[2vh] rounded-sm text-white md:text-[2vh] font-semibold">
       {t("cart.buy")}
     </button>
   );

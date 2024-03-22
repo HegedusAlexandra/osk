@@ -15,7 +15,9 @@ import OrderButton from "../components/OrderButton";
 
 export default function ProductSummary() {
   const products = useSelector((state) => state.products.products);
-  const selectedProducts = products.filter((el) => Object.values(el.quantity).reduce((b,a) => b+a) > 0)
+  const selectedProducts = products.filter(
+    (el) => Object.values(el.quantity).reduce((b, a) => b + a) > 0
+  );
   const { t, i18n } = useTranslation();
   const language = i18n.language;
   const dispatch = useDispatch();
@@ -46,8 +48,8 @@ export default function ProductSummary() {
     return i18n.t("currency", { value: changeCurr(amount) });
   };
 
-  console.log(selectedProducts);
-
+  const sendSum = () => console.log(selectedProducts);
+  
   return (
     <div className="w-[100%]">
       {window.innerWidth > 780 ? <Menu screen={"sum"} /> : <MobileMenu />}
@@ -70,16 +72,21 @@ export default function ProductSummary() {
                       />
                     </div>
                     <p className="flex justify-end text-[2vh] translate-y-[-2vh] w-[30%] border-b-2 border-solid border-black">
-                    {formatCurrency(Object.values(product.quantity).reduce((a,b) =>a+b) * product.price)}</p>
+                      {formatCurrency(
+                        Object.values(product.quantity).reduce(
+                          (a, b) => a + b
+                        ) * product.price
+                      )}
+                    </p>
                   </div>
                 </li>
               ))}
             </ul>
           ) : (
             <p>
-             {t('cart.empty')}
+              {t("cart.empty")}
               <NavLink className="text-orange-600 font-bold" to="/productlist">
-              {t('cart.selection')}
+                {t("cart.selection")}
               </NavLink>
             </p>
           )}
@@ -88,11 +95,17 @@ export default function ProductSummary() {
           <h2 className="flex justify-end w-[50vw] md:text-[6vh] text-[3vh] pl-[2vh] pt-[6vh] self-end">
             {formatCurrency(
               products
-                .map((el) => el.price * Object.values(el.quantity).reduce((a,b) =>a+b))
+                .map(
+                  (el) =>
+                    el.price *
+                    Object.values(el.quantity).reduce((a, b) => a + b)
+                )
                 .reduce((acc, cur) => acc + cur, 0)
             )}
           </h2>
-          <OrderButton/>
+          <div onClick={sendSum} className="w-[100%] flex justify-end">
+            <OrderButton />
+          </div>
         </div>
       </div>
       <Footer />

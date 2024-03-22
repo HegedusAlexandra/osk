@@ -85,6 +85,7 @@ export const EN = {
             buy:'I want it'
         },
         filter:{
+            search_on:"Please take a look at our other products as well, since we unfortunately couldn't find products that match your search criteria, or come back later.",
             name:'filter',
             FEMALE: 'WOMEN',
             MALE: 'MAN',
