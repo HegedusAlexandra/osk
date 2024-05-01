@@ -15,7 +15,7 @@ export const LanguageProvider = ({children}) => {
       const match = browserLanguages.find((lang) =>
         availableLanguages.includes(lang)
       );
-      return match.toUpperCase() || 'EN';
+      return match?.toUpperCase() || 'EN';
     };
   
     useEffect(
